@@ -1,0 +1,46 @@
+#nav {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 3em 0;
+  height: 105px;
+  padding: 0;
+  list-style: none;
+  background: #673AB7;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #512DA8, #673AB7);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #512DA8, #673AB7);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#nav li {
+  display: inline-block;
+  padding: 25px;
+  text-transform: uppercase;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#nav span {
+  color: #fff;
+  font-size: 50px;
+}
+
+.nav_link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width .3s;
+}
+
+.nav_link:hover::after {
+  width: 100%;
+}
