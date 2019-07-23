@@ -20,7 +20,26 @@ const CompaniesList = (props) => {
       <Link key={company.id} to={`/company/${company.id}`} className="companies-list">
         <div className="companies-list-link">
           <li key={company.id} >
-            {company.name}
+            <table className="company-link-table">
+                <tbody>
+                    <tr>
+                      <th>{company.name}</th>  
+                    </tr>
+                    <tr>
+                      <tr>
+                        <td className="application-count">
+                            {company.applicationCount}
+                        </td>
+                        <td className="interview-count">
+                            {company.interviewCount}
+                        </td>
+                        <td className="offer-count">
+                            {company.offerCount}
+                        </td>
+                      </tr>
+                    </tr>
+                </tbody>
+            </table>          
           </li>
         </div>
       </Link>

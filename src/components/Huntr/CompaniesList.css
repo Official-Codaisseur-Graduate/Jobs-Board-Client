@@ -24,6 +24,18 @@
   display: inline-block;
 }
 
+.application-count {
+  background: yellow; 
+}
+
+.interview-count {
+  background: darkorchid
+}
+
+.offer-count {
+  background: green
+}
+
 .companies-list:hover {
   transform: scale(1.1);
 }
