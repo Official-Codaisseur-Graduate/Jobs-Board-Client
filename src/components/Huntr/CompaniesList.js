@@ -17,16 +17,18 @@ const CompaniesList = (props) => {
 
   const listCompanies = companies && companies.rows.map(company => {
 
-    const companyValues=[["application-count",company.applicationCount],
-    ["interview-count",company.interviewCount],
-    ["offer-count",company.offerCount]]
+    const companyValues=[
+      ["application-count",company.applicationCount],
+      ["interview-count",company.interviewCount],
+      ["offer-count",company.offerCount]
+    ]
     const circles = []
 
-    companyValues.map(circle=> circles.push(
+    companyValues.map(value=> circles.push(
       <svg height="24" width="24">
         <g>
-          <circle className={circle[0]} cx="50%" cy="50%" r="12"/>
-          <text className="circle-text" x="50%" y="50%" dy=".4em">{circle[1]}</text>
+          <circle className={value[0]} cx="50%" cy="50%" r="12"/>
+          <text className="circle-text" x="50%" y="50%" dy=".4em">{value[1]}</text>
         </g>
       </svg>)
       )
