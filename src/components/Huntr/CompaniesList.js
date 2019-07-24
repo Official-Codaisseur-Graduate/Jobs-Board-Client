@@ -107,6 +107,23 @@ const CompaniesList = (props) => {
             <option value='jobOfferAfterApplyingRate'>success rate of applications</option>
           </select>
         </label>
+        <label>Minimum number of offers
+        <select onChange={props.OnOfferFilter} value={props.offerFilter}>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+          </select>
+        </label>
+        <label>Minimum number of applications
+        <select onChange={props.OnApplicationFilter} value={props.applicationFilter}>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+          </select>
+        </label>
         <p></p>
         <div className="legend">
           <div className="legend-table">

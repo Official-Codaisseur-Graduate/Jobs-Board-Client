@@ -15,7 +15,18 @@ class App extends Component {
         <div>
           <NavBar />
           <Route exact path="/" component={IndeedListContainer} />
-          <Route exact path="/companies/:page/:sortBy/:search?" component={CompaniesListContainer} />
+          <Route 
+            exact path="/companies/:page/:sortBy/:search?" 
+            component={CompaniesListContainer} 
+          />
+          <Route 
+            path="/companies/:page/:sortBy/filterByOffers/:offerCount" 
+            component={CompaniesListContainer} 
+          />
+          <Route 
+          path="/companies/:page/:sortBy/filterByApplications/:applicationCount" 
+          component={CompaniesListContainer} 
+          />
           <Route path="/jobs/:name" component={IndeedDetailsContainer} />
           <Route path="/company/:id" component={CompanyDetailsContainer} />
         </div>
