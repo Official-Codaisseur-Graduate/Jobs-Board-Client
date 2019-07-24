@@ -20,7 +20,6 @@ const CompaniesList = (props) => {
     const companyValues=[["application-count",company.applicationCount],
     ["interview-count",company.interviewCount],
     ["offer-count",company.offerCount]]
-
     const circles = []
 
     companyValues.map(circle=> circles.push(
