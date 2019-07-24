@@ -24,6 +24,38 @@
   display: inline-block;
 }
 
+.application-count {
+  background: yellow; 
+}
+
+.interview-count {
+  background: darkorchid;
+}
+
+.offer-count {
+  background: green;
+}
+
+.legend-table {
+  font-size: 12px;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+
+.legend-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding:3px;
+}
+
+.legend {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+}
+
 .companies-list:hover {
   transform: scale(1.1);
 }

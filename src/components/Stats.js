@@ -11,15 +11,18 @@ export default function Stats(props) {
   
   return (
     <div className="status">
-      <p>Hiring Success</p>
+      <h3>Hiring Success</h3>
       <div style={styles.pie}>
         <VictoryPie 
+          className="hiring-success-pie"
           style={{
             data: {
-              fillOpacity: 0.9
+              fillOpacity: 0.9,
+              fill: (d)=>d.y===company.jobOfferAfterApplyingRate ? "green" : "maroon"
             },
             labels: {
-              fontSize: 20
+              fontSize: 25,
+              fontWeight: "bold"
             }
           }}
           data={[
@@ -35,6 +38,17 @@ export default function Stats(props) {
           domainPadding={10}
         >
           <VictoryBar
+            className="victory-bar"
+            style= {{ 
+              data: {
+                fill: (d)=>d.y===company.applicationCount 
+                              ? "yellow" : d.y===company.interviewCount 
+                                              ? "darkorchid" : "green",
+                    },
+              labels: {
+                fontWeight: "bold"
+              }
+            }}
             data={[
               { x: 'applications', y: company.applicationCount},
               { x: 'interviews', y: company.interviewCount},
