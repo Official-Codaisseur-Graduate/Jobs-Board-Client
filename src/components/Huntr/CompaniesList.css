@@ -26,14 +26,22 @@
 
 .application-count {
   background: yellow; 
+  fill: yellow;
 }
+
 
 .interview-count {
   background: darkorchid;
+  fill: darkorchid
 }
 
 .offer-count {
   background: green;
+  fill: green
+}
+
+.circle-text {
+  text-anchor: middle
 }
 
 .legend-table {

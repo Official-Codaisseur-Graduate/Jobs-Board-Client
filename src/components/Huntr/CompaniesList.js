@@ -16,6 +16,22 @@ const CompaniesList = (props) => {
   }
 
   const listCompanies = companies && companies.rows.map(company => {
+
+    const companyValues=[["application-count",company.applicationCount],
+    ["interview-count",company.interviewCount],
+    ["offer-count",company.offerCount]]
+
+    const circles = []
+
+    companyValues.map(circle=> circles.push(
+      <svg height="24" width="24">
+        <g>
+          <circle className={circle[0]} cx="50%" cy="50%" r="12"/>
+          <text className="circle-text" x="50%" y="50%" dy=".4em">{circle[1]}</text>
+        </g>
+      </svg>)
+      )
+
     return (
       <Link key={company.id} to={`/company/${company.id}`} className="companies-list">
         <div className="companies-list-link">
@@ -24,14 +40,14 @@ const CompaniesList = (props) => {
             <table>
                 <tbody>
                   <tr>
-                    <td className="application-count">
-                        {company.applicationCount}
+                    <td>
+                        {circles[0]}
                     </td>
-                    <td className="interview-count">
-                        {company.interviewCount}
+                    <td>
+                        {circles[1]}
                     </td>
-                    <td className="offer-count">
-                        {company.offerCount}
+                    <td>
+                        {circles[2]}
                     </td>
                   </tr>
                 </tbody>
