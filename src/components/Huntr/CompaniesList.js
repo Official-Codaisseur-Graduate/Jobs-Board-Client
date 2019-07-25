@@ -77,6 +77,7 @@ const CompaniesList = (props) => {
   const filterByOffers =  <label className="filter">
                             Filter by: number of offers
                             <select 
+                              className='filter'
                               onChange={props.OnOfferFilter} 
                               value={props.offerFilter}
                             >
@@ -89,6 +90,7 @@ const CompaniesList = (props) => {
   const filterByApplications =  <label className="filter">
                                   Filter by: number of applications
                                   <select 
+                                    className='filter'
                                     onChange={props.OnApplicationFilter} 
                                     value={props.applicationFilter}
                                   >
