@@ -9,10 +9,8 @@ class CompaniesListContainer extends React.Component {
     page: this.props.match.params.page,
     sortBy: this.props.match.params.sortBy,
     search: this.props.match.params.search ? this.props.match.params.search : '',
-    offerCount: this.props.match.params.offers? 
-                  this.props.match.params.offerCount : 0,
-    applicationCount: this.props.match.params.applicationCount?
-                        this.props.match.params.applicationCount : 5
+    offerCount: this.props.companies? this.props.companies.offerCount : 0,
+    applicationCount: this.props.companies? this.props.companies.applicationCount : 5
   }
 
   componentDidMount() {
@@ -21,17 +19,26 @@ class CompaniesListContainer extends React.Component {
 
   componentDidUpdate(prevProps){
     const locationChanged = this.props.location !== prevProps.location
+    const offerFilter = this.state.offerCount
+    const applicationFilter = this.state.applicationCount
+    const filterByOffers = offerFilter !== this.props.companies.currentOffertCount
+    const filterByApplications = applicationFilter !== this.props.companies.currentApplicationCount
+
     if(locationChanged){
-      const { page, sortBy, search,offerCount,applicationCount } = this.props.match.params
+      const { page, sortBy, search, offerCount, applicationCount } = this.props.match.params
       const updatedState = {
         page,
         sortBy,
         search: search ? search : '',
-        offerCount,
-        applicationCount
+        offerCount: offerCount ? offerCount : "0",
+        applicationCount: applicationCount ? applicationCount : "5"
       }
       this.setState(updatedState)
       this.props.loadCompanies(updatedState)
+    }
+
+    if(filterByOffers || filterByApplications){
+      this.props.loadCompanies(this.state)
     }
   }
 
@@ -65,20 +72,19 @@ class CompaniesListContainer extends React.Component {
   }
 
   OnOfferFilter = (event) => {
-    const filterValue = event.target.value
-    this.props.history.push(
-      `/companies/${this.state.page}/${this.state.sortBy}/filterByOffers/${filterValue}`
-    )
+    this.setState({
+      offerCount: event.target.value
+    })
   }
 
   OnApplicationFilter = (event) => {
-    const filterValue = event.target.value
-    this.props.history.push(
-      `/companies/${this.state.page}/${this.state.sortBy}/filterByApplications/${filterValue}`
-    )
+    this.setState({
+      applicationCount: event.target.value
+    })
   }
 
   render() {
+    
     return (
       <div>
         <CompaniesList 

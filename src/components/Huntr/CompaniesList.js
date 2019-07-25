@@ -15,7 +15,7 @@ const CompaniesList = (props) => {
     )
   }
 
-  const listCompanies = companies && companies.rows.map(company => {
+  const listCompanies = companies.companies && companies.companies.rows.map(company => {
 
     const companyValues=[
       ["application-count",company.applicationCount],
@@ -30,8 +30,8 @@ const CompaniesList = (props) => {
           <circle className={value[0]} cx="50%" cy="50%" r="12"/>
           <text className="circle-text" x="50%" y="50%" dy=".4em">{value[1]}</text>
         </g>
-      </svg>)
-      )
+      </svg>
+    ))
 
     return (
       <Link key={company.id} to={`/company/${company.id}`} className="companies-list">
@@ -74,6 +74,33 @@ const CompaniesList = (props) => {
       subContainerClassName={'pages pagination'}
       activeClassName={'active'}
     />
+  const filterByOffers =  <label className="filter">
+                            Filter by: number of offers
+                            <select 
+                              onChange={props.OnOfferFilter} 
+                              value={props.offerFilter}
+                            >
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                            </select>
+                          </label>
+  const filterByApplications =  <label className="filter">
+                                  Filter by: number of applications
+                                  <select 
+                                    onChange={props.OnApplicationFilter} 
+                                    value={props.applicationFilter}
+                                  >
+                                    <option value='5'>5</option>
+                                    <option value='4'>4</option>
+                                    <option value='3'>3</option>
+                                    <option value='2'>2</option>
+                                    <option value='1'>1</option>
+                                  </select>
+                                </label>
+  const currentFilter = props.sortBy === "jobOfferAfterApplyingRate" ?
+                          filterByApplications : filterByOffers
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -107,23 +134,7 @@ const CompaniesList = (props) => {
             <option value='jobOfferAfterApplyingRate'>success rate of applications</option>
           </select>
         </label>
-        <label>Minimum number of offers
-        <select onChange={props.OnOfferFilter} value={props.offerFilter}>
-            <option value='0'>0</option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-          </select>
-        </label>
-        <label>Minimum number of applications
-        <select onChange={props.OnApplicationFilter} value={props.applicationFilter}>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-          </select>
-        </label>
+        {currentFilter}
         <p></p>
         <div className="legend">
           <div className="legend-table">

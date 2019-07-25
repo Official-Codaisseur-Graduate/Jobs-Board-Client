@@ -24,6 +24,11 @@
   display: inline-block;
 }
 
+.filter {
+  font-size: 15px;
+  margin-left: 1%
+}
+
 .application-count {
   background: yellow; 
   fill: yellow;

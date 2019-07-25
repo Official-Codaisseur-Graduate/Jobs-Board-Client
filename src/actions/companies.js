@@ -15,11 +15,14 @@ const companyFetched = company => ({
 })
 
 export const loadCompanies = (query) => (dispatch) => {
-  console.log("should query again",query)
   request(`${baseUrl}/companies`)
     .query(query)
     .then(response => {
-      dispatch(companiesFetched(response.body));
+      dispatch(companiesFetched({
+        companies: response.body,
+        currentOffertCount: query.offerCount,
+        currentApplicationCount: query.applicationCount
+      }));
     })
     .catch(error => {
       console.error(error);
