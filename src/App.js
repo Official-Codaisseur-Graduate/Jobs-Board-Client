@@ -7,6 +7,7 @@ import IndeedListContainer from './components/Indeed/IndeedListContainer'
 import IndeedDetailsContainer from './components/Indeed/IndeedDetailsContainer'
 import CompanyDetailsContainer from './components/Huntr/CompanyDetailsContainer';
 import NavBar from './components/TopBar/NavBar'
+import GraduatesStatsListContainer from './components/Huntr/GraduatesStatsListContainer';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/companies/:page/:sortBy/:search?" component={CompaniesListContainer} />
           <Route path="/jobs/:name" component={IndeedDetailsContainer} />
           <Route path="/company/:id" component={CompanyDetailsContainer} />
+          <Route path="/graduates" component={GraduatesStatsListContainer} />
         </div>
       </Provider>
     );
