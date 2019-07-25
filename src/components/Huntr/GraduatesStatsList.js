@@ -34,7 +34,7 @@ const ApplicationToOffer = !companies
 const data= {
   labels: ["Applications to Interview", "Interviews to Offer", "Applications to Offer"],
   datasets: [{
-  label: "Averages indicating how long it takes to get an offer or an interview after applying",
+  label: "Averages indicating what it takes to get an offer or an interview after applying",
   backgroundColor: 'rgb(255, 99, 132)',
   borderColor: 'rgb(255, 99, 132)',
   data: [ApplicationToInterview, InterviewToOffer, ApplicationToOffer],
@@ -56,14 +56,12 @@ const BarChart = !companies
 : <Bar
 data={data}
 options={options}
-width={150}
-height={100}
 />
 
   return (
     <div className="graduate-details">
       <h1>What Can I Expect as a Graduate Looking for a Job?</h1>
-      {BarChart}
+      <div className='bar-chart'>{BarChart}</div>
     </div>
   )
 
