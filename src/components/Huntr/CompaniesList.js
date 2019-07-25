@@ -15,6 +15,10 @@ const CompaniesList = (props) => {
     )
   }
 
+  const applicationIconUrl = "https://image.flaticon.com/icons/svg/1284/1284422.svg"
+  const interviewIconUrl = "https://image.flaticon.com/icons/svg/755/755192.svg"
+  const hiringIconUrl = "https://image.flaticon.com/icons/svg/432/432541.svg"
+
   const listCompanies = companies.companies && companies.companies.rows.map(company => {
 
     const companyValues=[
@@ -32,34 +36,54 @@ const CompaniesList = (props) => {
         </g>
       </svg>
     ))
+    const applicationCount = circles[0]
+    const interviewCount = circles[1]
+    const hiringCount = circles[2]
 
     return (
       <Link key={company.id} to={`/company/${company.id}`} className="companies-list">
         <div className="companies-list-link">
           <li key={company.id} >
             <p><b>{company.name}</b></p>
-            <table>
-                <tbody>
-                  <tr>
-                    <td>
-                        {circles[0]}
-                    </td>
-                    <td>
-                        {circles[1]}
-                    </td>
-                    <td>
-                        {circles[2]}
-                    </td>
-                  </tr>
-                </tbody>
-            </table>          
+            <div className="company-info-table">
+              <div className="company-info-cell">
+                <img 
+                  className="company-info-icons"
+                  src={applicationIconUrl}
+                  alt="application icon"
+                />
+              </div>
+              <div className="company-info-cell">
+              {applicationCount}
+              </div>
+              <div className="company-info-cell">
+                <img 
+                  className="company-info-icons"
+                  src={interviewIconUrl}
+                  alt="interview icon"
+                />
+              </div>
+              <div className="company-info-cell">
+              {interviewCount}
+              </div>
+              <div className="company-info-cell">
+                <img 
+                  className="company-info-icons"
+                  src={hiringIconUrl}
+                  alt="hiring icon"
+                />
+              </div>
+              <div className="company-info-cell">
+              {hiringCount}
+              </div>
+            </div>       
           </li>
         </div>
       </Link>
     )
   })
 
-  const pagination = companies.pages > 1 &&
+  const pagination = companies.companies.pages > 1 &&
     <ReactPaginate
       previousLabel={'previous'}
       nextLabel={'next'}
@@ -69,7 +93,7 @@ const CompaniesList = (props) => {
       pageRangeDisplayed={5}
       onPageChange={props.OnPageChange}
       forcePage={props.currentPage}
-      pageCount={companies.pages}
+      pageCount={companies.companies.pages}
       containerClassName={'pagination'}
       subContainerClassName={'pages pagination'}
       activeClassName={'active'}
@@ -105,13 +129,8 @@ const CompaniesList = (props) => {
                           filterByApplications : filterByOffers
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h3 style={{
-        textTransform: "uppercase",
-        fontSize: 20
-      }}>
-        Companies
-      </h3>
+    <div>
+      <h2 className="companies-list-header">Companies list</h2>
       <form
         onSubmit={props.OnSubmit}
         autoComplete='off'
@@ -144,10 +163,31 @@ const CompaniesList = (props) => {
                 <b>Legend:</b>
               </div>
               <div className="legend-cell">
+                <img 
+                  className="company-info-icons"
+                  src={applicationIconUrl}
+                  alt="application icon"
+                />
+              </div>
+              <div className="legend-cell">
                 <p className="application-count">Applications count</p>
               </div>
               <div className="legend-cell">
+                <img 
+                  className="company-info-icons"
+                  src={interviewIconUrl}
+                  alt="interview icon"
+                />
+              </div>
+              <div className="legend-cell">
                 <p className="interview-count">Interviews count</p>
+              </div>
+              <div className="legend-cell">
+                <img 
+                  className="company-info-icons"
+                  src={hiringIconUrl}
+                  alt="hiring icon"
+                />
               </div>
               <div className="legend-cell">
                 <p className="offer-count">Offers count</p>

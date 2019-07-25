@@ -63,6 +63,21 @@
   padding:3px;
 }
 
+.company-info-table {
+  display: table;
+  border-spacing: 3px;
+}
+
+.company-info-cell {
+  display: table-cell;
+  padding:3px;
+  vertical-align: middle;
+}
+
+.company-info-icons {
+  width: 24px
+}
+
 .legend {
   display: inline-block;
   vertical-align: middle;
