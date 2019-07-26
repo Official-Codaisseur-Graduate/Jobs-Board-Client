@@ -12,6 +12,7 @@ class CompaniesListContainer extends React.Component {
 
   componentDidMount() {
     this.props.loadCompanies(this.state)
+    console.log('COMPANIES PARAMS:', this.props.match.params)
   }
 
   componentDidUpdate(prevProps){

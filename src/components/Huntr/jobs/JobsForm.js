@@ -1,5 +1,5 @@
 import React from '../../../../node_modules/react'
-import './JobsList.css'
+import './css/JobsList.css'
 
 export default function JobsForm(props) {
   return (

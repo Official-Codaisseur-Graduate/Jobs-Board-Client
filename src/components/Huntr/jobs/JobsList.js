@@ -1,25 +1,62 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './JobsList.css'
+import './css/JobsList.css'
+import ReactPaginate from 'react-paginate'
+import './css/Pagination.css'
 
-export default function JobsList(props) {
+const JobsList = (props) => {
   const { jobs } = props
-  const JobsList = !jobs
-    ? "Loading... "
-    : jobs.map((job, index) =>
-      <Link key={index} to={`/jobs/${job.company}`}
-        className="jobs-list">
-        <li key={index} className="jobs-list-link">
-          {job.title}
-        </li>
+
+  if (!jobs) {
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <p>Loading...</p>
+      </div>
+    )
+  }
+
+  const listJobs = jobs && jobs.map(job => {
+    return (
+      <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
+        <div>
+          <li key={job.id} className="jobs-list-link">
+            <p>{job.title}</p>
+          </li>
+        </div>
       </Link>
     )
+  })
+
+  const pagination = jobs.pages > 1 &&
+    <ReactPaginate
+      previousLabel={'previous'}
+      nextLabel={'next'}
+      breakLabel={'...'}
+      breakClassName={'break-me'}
+      marginPagesDisplayed={2}
+      pageRangeDisplayed={5}
+      onPageChange={props.OnPageChange}
+      forcePage={props.currentPage}
+      pageCount={jobs.pages}
+      containerClassName={'pagination'}
+      subContainerClassName={'pages pagination'}
+      activeClassName={'active'}
+    />
+
+    console.log('props', props)
 
   return (
-    <div className="jobs-list-header">
-      <div className="jobs-list-div">
-        <ul>{JobsList}</ul>
+    <div style={{ textAlign: 'center' }}>
+      <div className="jobs-list-header">
+        <div className="jobs-list-div">
+          <ul>{listJobs}</ul>
+        </div>
       </div>
+      <div style={{ textAlign: 'center' }}>
+      </div>
+      {pagination}
     </div>
   )
 }
+
+export default JobsList
