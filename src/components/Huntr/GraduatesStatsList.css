@@ -1,9 +1,10 @@
-.graduate-details h1 {
-  font-size: 300%;
+.graduate-details h3 {
+  font-size: 20;
   text-align: center;
+  text-transform: uppercase
 } 
 
 .bar-chart {
-  max-width: 50%;
+  max-width: 60%;
   margin: auto
 }
