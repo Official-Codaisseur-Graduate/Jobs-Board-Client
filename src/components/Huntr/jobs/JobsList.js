@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './JobsList.css'
+import './css/JobsList.css'
 
 export default function JobsList(props) {
   const { jobs } = props
