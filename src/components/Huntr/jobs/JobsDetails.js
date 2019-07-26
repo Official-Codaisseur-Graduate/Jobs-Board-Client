@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './IndeedList.css'
+import React from '../../../../node_modules/react'
+import { Link } from '../../../../node_modules/react-router-dom'
+import './JobsList.css'
 
-export default function IndeedDetails(props) {
+export default function JobsDetails(props) {
   const { selectedJob } = props
   const JobsDetails = !selectedJob
     ? "Loading... "

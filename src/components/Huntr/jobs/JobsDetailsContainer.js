@@ -1,10 +1,10 @@
 import React from 'react'
-import { findMatchingCompany } from '../../actions/jobs'
+// import { findMatchingCompany } from '../../actions/jobs'
 import { connect } from 'react-redux'
-import IndeedDetails from './IndeedDetails';
-import Stats from '../Stats';
+import JobsDetails from './JobsDetails';
+import Stats from '../../Stats';
 
-class IndeedDetailsContainer extends React.Component {
+class JobsDetailsContainer extends React.Component {
   state = { 
     selectedJob: null 
   }
@@ -16,7 +16,7 @@ class IndeedDetailsContainer extends React.Component {
         return job.company.replace(regExp, '') === this.props.match.params.name
       })
 
-    this.props.findMatchingCompany(this.props.match.params.name)
+    // this.props.findMatchingCompany(this.props.match.params.name)
 
     this.setState({
       selectedJob: selectedJob
@@ -26,8 +26,8 @@ class IndeedDetailsContainer extends React.Component {
   render() {
     return (
       <div>
-        <IndeedDetails selectedJob={this.state.selectedJob} />
-        <Stats company={this.props.indeedCompany}/>
+        <JobsDetails selectedJob={this.state.selectedJob} />
+        <Stats company={this.props.jobsCompany}/>
       </div>
     )
   }
@@ -36,8 +36,8 @@ class IndeedDetailsContainer extends React.Component {
 const mapStateToProps = state => {
   return { 
     jobs: state.jobs,
-    indeedCompany: state.indeedCompany
+    jobsCompany: state.jobsCompany
   }
 }
 
-export default connect(mapStateToProps, { findMatchingCompany })(IndeedDetailsContainer) 
+export default connect(mapStateToProps)(JobsDetailsContainer) 

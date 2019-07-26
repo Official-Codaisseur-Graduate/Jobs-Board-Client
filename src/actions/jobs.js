@@ -27,20 +27,20 @@ export const searchJobs = (query) => (dispatch) => {
     });
 }
 
-export const INDEED_COMPANY_FETCHED = "INDEED_COMPANY_FETCHED";
+// export const JOBS_COMPANY_FETCHED = "JOBS_COMPANY_FETCHED";
 
-const indeedCompanyFetched = company => ({
-  type: INDEED_COMPANY_FETCHED,
-  company
-})
+// const jobsCompanyFetched = company => ({
+//   type: JOBS_COMPANY_FETCHED,
+//   company
+// })
 
-export const findMatchingCompany = (companyName) => (dispatch) => {
-  request
-    .get(`${baseUrl}/companies/indeed/${companyName}`)
-    .then(response => {
-      dispatch(indeedCompanyFetched(response.body))
-    })
-    .catch(error => {
-      console.error(error)
-    })
-}
+// export const findMatchingCompany = (companyName) => (dispatch) => {
+//   request
+//     .get(`${baseUrl}/companies/jobs/${companyName}`)
+//     .then(response => {
+//       dispatch(jobsCompanyFetched(response.body))
+//     })
+//     .catch(error => {
+//       console.error(error)
+//     })
+// }

@@ -1,10 +1,10 @@
 import React from 'react'
-import { initializeJobs } from '../../actions/jobs'
+import { initializeJobs } from '../../../actions/jobs'
 import { connect } from 'react-redux'
-import IndeedList from './IndeedList'
-import IndeedFormContainer from './IndeedFormContainer'
+import JobsList from './JobsList'
+import JobsFormContainer from './JobsFormContainer'
 
-class IndeedListContainer extends React.PureComponent {
+class JobsListContainer extends React.PureComponent {
   componentDidMount() {
     this.props.initializeJobs()
   }
@@ -18,8 +18,8 @@ class IndeedListContainer extends React.PureComponent {
           }}>
           List of Jobs
         </h3>
-        <IndeedFormContainer />
-        <IndeedList jobs={this.props.jobs} />
+        <JobsFormContainer />
+        <JobsList jobs={this.props.jobs} />
       </div>
     )
   }
@@ -29,4 +29,4 @@ const mapStateToProps = state => {
   return { jobs: state.jobs }
 }
 
-export default connect(mapStateToProps, { initializeJobs })(IndeedListContainer)
+export default connect(mapStateToProps, { initializeJobs })(JobsListContainer)
