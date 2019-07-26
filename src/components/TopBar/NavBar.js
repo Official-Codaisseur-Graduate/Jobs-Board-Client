@@ -7,8 +7,12 @@ class NavBar extends React.Component {
     return (
       <div>
         <ul id="nav">
+        <li>
+            <Link className="nav_link" to={`/`}>Home</Link>
+          </li>
+          <span>|</span>
           <li>
-            <Link className="nav_link" to={`/`}>Jobs</Link>
+            <Link className="nav_link" to={`/jobs`}>Jobs</Link>
           </li>
           <span>|</span>
           <li>

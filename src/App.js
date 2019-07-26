@@ -8,6 +8,7 @@ import JobsDetailsContainer from './components/Huntr/jobs/JobsDetailsContainer'
 import CompanyDetailsContainer from './components/Huntr/CompanyDetailsContainer';
 import NavBar from './components/TopBar/NavBar'
 import GraduatesStatsListContainer from './components/Huntr/GraduatesStatsListContainer';
+import HomePage from './components/Huntr/HomePage';
 
 class App extends Component {
   render() {
@@ -15,7 +16,8 @@ class App extends Component {
       <Provider store={store}>
         <div>
           <NavBar />
-          <Route exact path="/" component={JobsListContainer} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/jobs" component={JobsListContainer} />
           <Route exact path="/companies/:page/:sortBy/:search?" component={CompaniesListContainer} />
           <Route path="/jobs/:name" component={JobsDetailsContainer} />
           <Route path="/company/:id" component={CompanyDetailsContainer} />
