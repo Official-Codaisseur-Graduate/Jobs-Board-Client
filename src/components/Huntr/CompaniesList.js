@@ -26,19 +26,17 @@ const CompaniesList = (props) => {
       ["interview-count",company.interviewCount],
       ["offer-count",company.offerCount]
     ]
-    const circles = []
-
-    companyValues.map(value=> circles.push(
+    const companyInfo = companyValues.map(value=> 
       <svg height="24" width="24">
         <g>
           <circle className={value[0]} cx="50%" cy="50%" r="12"/>
           <text className="circle-text" x="50%" y="50%" dy=".4em">{value[1]}</text>
         </g>
       </svg>
-    ))
-    const applicationCount = circles[0]
-    const interviewCount = circles[1]
-    const hiringCount = circles[2]
+    )
+    const applicationCount = companyInfo[0]
+    const interviewCount = companyInfo[1]
+    const hiringCount = companyInfo[2]
 
     return (
       <Link key={company.id} to={`/company/${company.id}`} className="companies-list">

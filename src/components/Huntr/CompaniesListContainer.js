@@ -18,11 +18,12 @@ class CompaniesListContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    const locationChanged = this.props.location !== prevProps.location
+    const { location, companies } = this.props
+    const locationChanged = location !== prevProps.location
     const offerFilter = this.state.offerCount
     const applicationFilter = this.state.applicationCount
-    const filterByOffers = offerFilter !== this.props.companies.currentOffertCount
-    const filterByApplications = applicationFilter !== this.props.companies.currentApplicationCount
+    const filterByOffers = offerFilter !== companies.currentOffertCount
+    const filterByApplications = applicationFilter !== companies.currentApplicationCount
 
     if(locationChanged){
       const { page, sortBy, search, offerCount, applicationCount } = this.props.match.params

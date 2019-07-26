@@ -30,19 +30,19 @@
 }
 
 .application-count {
-  background: yellow; 
-  fill: yellow;
+  background: rgb(54, 162, 235); 
+  fill: rgb(54, 162, 235); 
 }
 
 
 .interview-count {
-  background: darkorchid;
-  fill: darkorchid
+  background: rgb(255, 206, 86);
+  fill: rgb(255, 206, 86)
 }
 
 .offer-count {
-  background: green;
-  fill: green
+  background: rgb(255, 99, 132);
+  fill: rgb(255, 99, 132);
 }
 
 .circle-text {
