@@ -13,7 +13,11 @@ class NavBar extends React.Component {
           <span>|</span>
           <li>
             <Link className="nav_link" to={`/companies/0/interviewCount/`}>Companies</Link>
-            </li>
+          </li>
+          <span>|</span>
+          <li>
+            <Link className="nav_link" to={'/graduates'}>Graduates</Link>
+          </li>
         </ul>
       </div>
     );

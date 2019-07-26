@@ -1,8 +1,8 @@
-import { COMPANIES_FETCHED } from "../actions/companies"
+import { ALL_COMPANIES_FETCHED } from "../actions/allCompanies"
 
 export default (state = null, action = {}) => {
   switch (action.type) {
-    case COMPANIES_FETCHED:
+    case ALL_COMPANIES_FETCHED:
       return action.companies
     default:
       return state

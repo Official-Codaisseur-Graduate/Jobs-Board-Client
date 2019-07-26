@@ -20,7 +20,22 @@ const CompaniesList = (props) => {
       <Link key={company.id} to={`/company/${company.id}`} className="companies-list">
         <div className="companies-list-link">
           <li key={company.id} >
-            {company.name}
+            <p><b>{company.name}</b></p>
+            <table>
+                <tbody>
+                  <tr>
+                    <td className="application-count">
+                        {company.applicationCount}
+                    </td>
+                    <td className="interview-count">
+                        {company.interviewCount}
+                    </td>
+                    <td className="offer-count">
+                        {company.offerCount}
+                    </td>
+                  </tr>
+                </tbody>
+            </table>          
           </li>
         </div>
       </Link>
@@ -75,6 +90,23 @@ const CompaniesList = (props) => {
             <option value='jobOfferAfterApplyingRate'>success rate of applications</option>
           </select>
         </label>
+        <p></p>
+        <div className="legend">
+          <div className="legend-table">
+              <div className="legend-cell">
+                <b>Legend:</b>
+              </div>
+              <div className="legend-cell">
+                <p className="application-count">Applications count</p>
+              </div>
+              <div className="legend-cell">
+                <p className="interview-count">Interviews count</p>
+              </div>
+              <div className="legend-cell">
+                <p className="offer-count">Offers count</p>
+              </div>
+          </div>
+        </div>
         <div className="companies-list-header">
           {listCompanies}
         </div>

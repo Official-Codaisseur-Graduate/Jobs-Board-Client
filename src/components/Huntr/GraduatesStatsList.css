@@ -1,0 +1,9 @@
+.graduate-details h1 {
+  font-size: 300%;
+  text-align: center;
+} 
+
+.bar-chart {
+  max-width: 50%;
+  margin: auto
+}
