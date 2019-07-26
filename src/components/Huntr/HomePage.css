@@ -16,3 +16,11 @@
   margin-bottom: 50px
 }
 
+.contributors-list {
+  display: flex;
+}
+
+.contributors-list div {
+  margin: auto;
+}
+
