@@ -8,10 +8,28 @@ const jobsFetched = jobs => ({
   jobs
 })
 
-export const initializeJobs = () => (dispatch, getState) => {
-  if (getState().jobs) return
-  dispatch( searchJobs({query: 'Junior Developer', city: 'Amsterdam'}) )
+export const loadJobs = (query) => (dispatch) => {
+  console.log('QUERY:', query)
+  request(`${baseUrl}/jobs`)
+    .query(query)
+    .then(response => {
+      dispatch(jobsFetched(response.body));
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
+
+
+
+// export const loadJobs = (query) => (dispatch, getState) => {
+//   console.log('QUERY:', query)
+//   if (getState().jobs) return
+//   dispatch(searchJobs(
+//     query
+//     // { position: 'Junior Developer', city: 'Amsterdam' }
+//   ))
+// }
 
 export const searchJobs = (query) => (dispatch) => {
   dispatch(jobsFetched(null))
