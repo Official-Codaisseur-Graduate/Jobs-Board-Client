@@ -16,6 +16,9 @@ export default function HomePage() {
       <h4>How?</h4>
       <p>In order to do this we used the Huntr API for previous graduates data and job postings.</p>
       <h4>Contributors</h4>
+      <div className='contributors-list'>
+      <div>
+      <h5>Class #27</h5>
       <ul>
         <li>
           Jetske van der Wouden
@@ -29,7 +32,26 @@ export default function HomePage() {
         <li>
           Alina Beglarian
         </li>
+        </ul>
+        </div>
+        <div>
+        <h5>Class #26</h5>
+      <ul>
+        <li>
+          Tiago Barros
+        </li>
+        <li>
+          Cathal Hastings
+        </li>
+        <li>
+          Hager Hussein
+        </li>
+        <li>
+          Dave Mollen
+        </li>
       </ul>
+      </div>
+      </div>
     </div>
     </div>
   )
