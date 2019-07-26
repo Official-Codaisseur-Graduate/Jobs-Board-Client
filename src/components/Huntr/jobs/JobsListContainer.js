@@ -13,6 +13,11 @@ class JobsListContainer extends React.PureComponent {
 
   componentDidMount() {
     this.props.loadJobs(this.state)
+    // if (this.state.search !== undefined) {
+    //   this.props.history.push(
+    //     `/jobs/0/${this.state.sortBy}/${this.state.search}`
+    //   )
+    // }
     console.log('PARAMS:', this.props.match)
   }
 
