@@ -1,49 +1,61 @@
 import React from 'react'
 import './GraduatesStatsList.css'
-import { Bar } from 'react-chartjs-2'
+import { HorizontalBar } from 'react-chartjs-2'
 
 export default function GraduatesStatsList(props) {
 const { companies } = props
 
-const reducer = (accumulator, currentValue) => accumulator + currentValue
+const sum = (accumulator, currentValue) => accumulator + currentValue
 
 const ApplicationToInterview = !companies
 ? 'Loading...'
-: Math.round((props.companies
+: ((companies
     .map(companies => companies.applicationCount)
-    .reduce(reducer)) / (props.companies
+    .reduce(sum)) / (props.companies
       .map(companies => companies.interviewCount)
-      .reduce(reducer)))
+      .reduce(sum))).toFixed(1)
 
 const InterviewToOffer = !companies 
 ? 'Loading...' 
-: Math.round((props.companies
+: ((companies
     .map(companies => companies.interviewCount)
-    .reduce(reducer)) / (props.companies
+    .reduce(sum)) / (companies
       .map(companies => companies.offerCount)
-      .reduce(reducer)))
+      .reduce(sum))).toFixed(1)
 
 const ApplicationToOffer = !companies
 ? 'Loading...'
-: Math.round((props.companies
+: ((companies
     .map(companies => companies.applicationCount)
-    .reduce(reducer)) / (props.companies
+    .reduce(sum)) / (companies
       .map(companies => companies.offerCount)
-      .reduce(reducer)))
+      .reduce(sum))).toFixed(1)
 
-const data= {
-  labels: ["Applications to Interview", "Interviews to Offer", "Applications to Offer"],
+const data = {
+  labels: [
+    `Applications to Offer`,
+    `Interviews to Offer`,
+    `Applications to Interview`
+  ],
   datasets: [{
   label: "Averages indicating what it takes to get an offer or an interview after applying",
   backgroundColor: 'rgb(255, 99, 132)',
   borderColor: 'rgb(255, 99, 132)',
-  data: [ApplicationToInterview, InterviewToOffer, ApplicationToOffer],
+  data: [ApplicationToOffer, InterviewToOffer, ApplicationToInterview],
   }]
 }
 
 const options = {
+  showAllTooltips: true,
   scales: {
     yAxes: [{
+      ticks: {
+        beginAtZero: true
+      },
+      categoryPercentage: 1.0,
+      barPercentage: 1.0
+    }],
+    xAxes: [{
       ticks: {
         beginAtZero: true
       }
@@ -53,14 +65,14 @@ const options = {
 
 const BarChart = !companies
 ? 'Loading...'
-: <Bar
-data={data}
-options={options}
+: <HorizontalBar
+  data={data}
+  options={options}
 />
 
   return (
     <div className="graduate-details">
-      <h1>What Can I Expect as a Graduate Looking for a Job?</h1>
+      <h3>What Can I Expect as a Graduate Looking for a Job?</h3>
       <div className='bar-chart'>{BarChart}</div>
     </div>
   )
