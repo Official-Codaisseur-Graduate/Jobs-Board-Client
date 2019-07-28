@@ -97,7 +97,7 @@ const CompaniesList = (props) => {
       activeClassName={'active'}
     />
   const filterByOffers =  <label className="filter">
-                            Filter by: number of offers
+                            Show companies with at least
                             <select 
                               className='filter'
                               onChange={props.OnOfferFilter} 
@@ -108,9 +108,24 @@ const CompaniesList = (props) => {
                               <option value='2'>2</option>
                               <option value='3'>3</option>
                             </select>
+                            offers
                           </label>
+  const filterByExactOffers =   <label className="filter">
+                                Show companies with exactly
+                                <select 
+                                  className='filter'
+                                  onChange={props.OnExactOfferFilter} 
+                                  value={props.exactOfferFilter}
+                                >
+                                  <option value='No filter'>No filter</option>
+                                  <option value='0'>0</option>
+                                  <option value='1'>1</option>
+                                  <option value='2'>2</option>
+                                </select>
+                                offers
+                                </label>
   const filterByApplications =  <label className="filter">
-                                  Filter by: number of applications
+                                  Show companies with at least
                                   <select 
                                     className='filter'
                                     onChange={props.OnApplicationFilter} 
@@ -122,6 +137,7 @@ const CompaniesList = (props) => {
                                     <option value='2'>2</option>
                                     <option value='1'>1</option>
                                   </select>
+                                  applications
                                 </label>
   const currentFilter = props.sortBy === "jobOfferAfterApplyingRate" ?
                           filterByApplications : filterByOffers
@@ -153,7 +169,7 @@ const CompaniesList = (props) => {
             <option value='jobOfferAfterApplyingRate'>success rate of applications</option>
           </select>
         </label>
-        {currentFilter}
+        {currentFilter}{filterByExactOffers}
         <p></p>
         <div className="legend">
           <div className="legend-table">
