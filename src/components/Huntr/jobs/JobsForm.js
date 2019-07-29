@@ -1,10 +1,10 @@
-import React from 'react'
-import './IndeedList.css'
+import React from '../../../../node_modules/react'
+import './css/JobsList.css'
 
-export default function IndeedForm(props) {
+export default function JobsForm(props) {
   return (
     <form 
-      id='indeedQuery' 
+      id='jobsQuery' 
       onSubmit={props.onSubmit} 
       autoComplete='off'
       className="form-list">

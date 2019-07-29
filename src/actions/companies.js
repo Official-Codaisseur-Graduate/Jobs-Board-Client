@@ -28,6 +28,7 @@ export const loadCompanies = (query) => (dispatch) => {
       console.error(error);
     });
 }
+
 export const loadCompany = (id) => (dispatch, getState) => {
   const state = getState().company
   if (state && state.id === id) return
@@ -38,5 +39,3 @@ export const loadCompany = (id) => (dispatch, getState) => {
     })
     .catch(console.error)
 }
-
-

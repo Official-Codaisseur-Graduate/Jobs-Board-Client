@@ -33,7 +33,7 @@ class CompaniesListContainer extends React.Component {
     else
     {
       this.props.loadCompanies(queries)
-    }
+    }  
   }
 
   componentDidUpdate(){

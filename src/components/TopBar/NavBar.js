@@ -8,12 +8,20 @@ class NavBar extends React.Component {
       <div>
         <ul id="nav">
           <li>
-            <Link className="nav_link" to={`/`}>Jobs</Link>
+            <Link className="nav_link" to={`/`}>Home</Link>
+          </li>
+          <span>|</span>
+          <li>
+            <Link className="nav_link" to={`/jobs`}>Jobs</Link>
           </li>
           <span>|</span>
           <li>
             <Link className="nav_link" to={`/companies`}>Companies</Link>
-            </li>
+          </li>
+          <span>|</span>
+          <li>
+            <Link className="nav_link" to={'/graduates'}>Graduates</Link>
+          </li>
         </ul>
       </div>
     );

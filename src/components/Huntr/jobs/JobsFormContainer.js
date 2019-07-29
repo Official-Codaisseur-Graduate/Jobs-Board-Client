@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import IndeedForm from './IndeedForm'
-import { searchJobs } from '../../actions/jobs'
+import JobsForm from './JobsForm'
+import { searchJobs } from '../../../actions/jobs'
 
-class IndeedFormContainer extends React.Component {
+class JobsFormContainer extends React.Component {
   state = {
     query: '',
     city: ''
@@ -25,7 +25,7 @@ class IndeedFormContainer extends React.Component {
   }
 
   render() {
-    return (<IndeedForm
+    return (<JobsForm
       onSubmit={this.onSubmit}
       onChange={this.onChange}
       values={this.state}
@@ -34,4 +34,4 @@ class IndeedFormContainer extends React.Component {
 }
 
 
-export default connect(null, { searchJobs })(IndeedFormContainer)
+export default connect(null, { searchJobs })(JobsFormContainer)
