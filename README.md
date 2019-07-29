@@ -69,7 +69,7 @@ This project was scaffolded using the create-react-app cli.
 
 ## Suggestions
 
-For suggestions and unfinished userstories you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
+For suggestions, unfinished userstories and issues you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
 
