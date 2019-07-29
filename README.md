@@ -41,7 +41,7 @@ We also added a graduates page with a chart displaying how many applications and
 
 ## Setup
 In order to run this App please ensure you have the server running as well. 
-Instructions on how to do that may be found [here](https://github.com/hastinc/Jobs-Board-Server)
+Instructions on how to do that may be found [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server)
 - git clone
 - npm install
 - npm run start
