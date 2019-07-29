@@ -2,45 +2,118 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { loadCompanies } from '../../actions/companies'
 import CompaniesList from '../Huntr/CompaniesList'
+import queryString from 'query-string'
+
 
 class CompaniesListContainer extends React.Component {
+
   state = {
-    page: this.props.match.params.page,
-    sortBy: this.props.match.params.sortBy,
-    search: this.props.match.params.search === undefined ? '' : this.props.match.params.search
+    page: this.props.companies ? this.props.companies.query.page : 0,
+    sortBy: this.props.companies ? this.props.companies.query.sortBy : "applicationCount",
+    search: this.props.companies ? this.props.companies.query.search : '',
+    offerCount: this.props.companies ? this.props.companies.query.offerCount : 0,
+    applicationCount: this.props.companies? this.props.companies.query.applicationCount : 5,
+    exactOfferCount: 'No filter'
   }
 
   componentDidMount() {
-    this.props.loadCompanies(this.state)
-    console.log('COMPANIES PARAMS:', this.props.match.params)
+    const queries = queryString.parse(this.props.location.search);
+    if(!queries.page){
+      const newState = {
+        page: this.state.page,
+        sortBy: this.state.sortBy,
+        offerCount: this.state.offerCount,
+        applicationCount : this.state.applicationCount
+      }
+      this.props.loadCompanies(newState)    
+    }
+    this.props.loadCompanies(queries)
   }
 
-  componentDidUpdate(prevProps){
-    const locationChanged = this.props.location !== prevProps.location
-    if(locationChanged){
-      const { page, sortBy, search } = this.props.match.params
-      const updatedState = {
-        page,
-        sortBy,
-        search: search === undefined ? '' : search
+  componentDidUpdate(){
+    const { page, sortBy, offerCount, applicationCount, exactOfferCount } = 
+      this.props.companies.query
+    const condition1 = this.state.sortBy !== sortBy
+    const condition2 = this.state.offerCount !== offerCount
+    const condition3 = this.state.applicationCount !== applicationCount
+    const condition4 = exactOfferCount && this.state.exactOfferCount === 'No filter'
+    const condition5 = this.state.page !== page
+    if(this.state.search===''){
+      if(condition1||condition2||condition3||condition4||condition5){
+        const newState = {
+          page: this.state.page,
+          sortBy: this.state.sortBy,
+          offerCount: this.state.offerCount,
+          applicationCount : this.state.applicationCount
+        }
+        this.props.loadCompanies(newState)
       }
-      this.setState(updatedState)
-      this.props.loadCompanies(updatedState)
+      
+      if(this.state.exactOfferCount !== 'No filter'){
+        if(this.state.exactOfferCount !== exactOfferCount){
+          const exactOfferFilterState = {
+            page: this.state.page,
+            sortBy: this.state.sortBy,
+            exactOfferCount: this.state.exactOfferCount,
+            offerCount: this.state.offerCount,
+            applicationCount: this.state.applicationCount
+          }
+          this.props.loadCompanies(exactOfferFilterState)
+        }
+      }
     }
   }
 
   OnPageChange = (event) => {
     const { selected } = event;
-    this.props.history.push(
-      `/companies/${selected}/${this.state.sortBy}/${this.state.search}`
+    const { sortBy, offerCount, exactOfferCount } = this.props.companies.query
+    const pageAndSortByQueries = `/companies?page=${selected}&sortBy=${sortBy}`
+
+    this.setState({
+      page: selected
+    })
+
+    if(offerCount>0){
+      this.props.history.push(
+        `${pageAndSortByQueries}&filterByOffers=${offerCount}`
       )
+    }
+    else
+    {
+      if(exactOfferCount>=0){
+        this.props.history.push(
+          `${pageAndSortByQueries}&exactFilterByOffers=${exactOfferCount}`
+        )
+      }
+      else
+      { this.props.history.push(pageAndSortByQueries) }
+    }
   }
 
   OnSortChange = (event) => {
-    const sortBy = event.target.value
-    this.props.history.push(
-      `/companies/${this.state.page}/${sortBy}/${this.state.search}`
-    )
+    const newSortBy = event.target.value
+    const { page, offerCount, exactOfferCount } = this.state
+    const pageAndSortByQueries = `/companies?page=${page}&sortBy=${newSortBy}`
+
+    this.setState({
+      sortBy: newSortBy
+    })
+
+    if(offerCount>0){
+      this.props.history.push(
+        `${pageAndSortByQueries}&filterByOffers=${offerCount}`
+      )
+    }
+    else
+    {
+      if(exactOfferCount>=0){
+        this.props.history.push(
+          `${pageAndSortByQueries}&exactFilterByOffers=${exactOfferCount}`
+        )
+      }
+      else
+      { this.props.history.push(pageAndSortByQueries) }
+    }
   }
 
   OnSearchChange = (event) => {
@@ -51,25 +124,65 @@ class CompaniesListContainer extends React.Component {
 
   OnSubmit = (event) => {
     event.preventDefault()
-    if(this.state.search !== undefined){
+    this.props.loadCompanies(this.state)
+    if(this.state.search !== ''){
       this.props.history.push(
-        `/companies/0/${this.state.sortBy}/${this.state.search}`
+        `/companies?search=${this.state.search}`
       )
     }
   }
 
+  OnOfferFilter = (event) => {
+    const { page,sortBy } = this.props.companies.query
+    this.setState({
+      offerCount: event.target.value
+    })
+    this.props.history.push(
+      `/companies?page=${page}&sortBy=${sortBy}&filterByOffers=${event.target.value}`
+    )
+
+  }
+
+  OnExactOfferFilter = (event) => {
+    const { page, sortBy } = this.props.companies.query
+    this.setState({
+      exactOfferCount: event.target.value
+    })
+    this.props.history.push(
+      `/companies?page=${page}&sortBy=${sortBy}&exactFilterByOffers=${event.target.value}`
+    )
+  }
+
+  OnApplicationFilter = (event) => {
+    const { page, sortBy } = this.props.companies.query
+    this.setState({
+      applicationCount: event.target.value
+    })
+    this.props.history.push(
+      `/companies?page=${page}&sortBy=${sortBy}&filterByApplications=${event.target.value}`
+    )
+
+  }
+
   render() {
+    
     return (
       <div>
         <CompaniesList 
           companies={this.props.companies}
           OnPageChange={this.OnPageChange}
           OnSortChange={this.OnSortChange}
+          OnOfferFilter={this.OnOfferFilter}
+          OnApplicationFilter={this.OnApplicationFilter}
+          OnExactOfferFilter={this.OnExactOfferFilter}
           OnSubmit={this.OnSubmit}
           OnSearchChange={this.OnSearchChange}
           companyName={this.state.search}
           sortBy={this.state.sortBy}
           currentPage={parseInt(this.state.page)}
+          offerFilter={this.state.offerCount}
+          applicationFilter={this.state.applicationCount}
+          exactOfferFilter={this.state.exactOfferFilter}
         />        
       </div>
     )

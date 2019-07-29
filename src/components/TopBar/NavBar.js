@@ -16,7 +16,7 @@ class NavBar extends React.Component {
           </li>
           <span>|</span>
           <li>
-            <Link className="nav_link" to={`/companies/0/interviewCount/`}>Companies</Link>
+            <Link className="nav_link" to={`/companies`}>Companies</Link>
           </li>
           <span>|</span>
           <li>
