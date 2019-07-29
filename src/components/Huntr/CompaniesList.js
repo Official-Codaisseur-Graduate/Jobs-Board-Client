@@ -58,6 +58,8 @@ const CompaniesList = (props) => {
       activeClassName={'active'}
     />
 
+      console.log('propsCOMPANIES', props)
+
   return (
     <div style={{ textAlign: 'center' }}>
       <h3 style={{

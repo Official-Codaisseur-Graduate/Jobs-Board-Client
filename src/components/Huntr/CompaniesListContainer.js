@@ -69,8 +69,7 @@ class CompaniesListContainer extends React.Component {
           OnSearchChange={this.OnSearchChange}
           companyName={this.state.search}
           sortBy={this.state.sortBy}
-          currentPage={parseInt(this.state.page)
-          }
+          currentPage={parseInt(this.state.page)}
         />        
       </div>
     )

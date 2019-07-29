@@ -1,45 +1,67 @@
 import React from 'react'
+import queryString from 'query-string'
 import { loadJobs } from '../../../actions/jobs'
 import { connect } from 'react-redux'
 import JobsList from './JobsList'
 import JobsFormContainer from './JobsFormContainer'
 
 class JobsListContainer extends React.PureComponent {
-  state = {
-    page: this.props.match.params.page,
-    sortBy: this.props.match.params.sortBy,
-    search: this.props.match.params.search === undefined ? '' : this.props.match.params.search
-  }
+  queries = queryString.parse(this.props.location.search)
 
+  state = {
+    page: this.queries.page || 0,
+    sortBy: this.queries.sortBy || 'title',
+    search: this.queries.search || ''
+  }
+  
   componentDidMount() {
-    this.props.loadJobs(this.state)
-    // if (this.state.search !== undefined) {
+    const urlParams = queryString.parse(this.props.location.search)
+    // console.log('URLparams', page, search, sortBy);
+
+    this.props.loadJobs(urlParams)
+    this.setState({
+      page: urlParams.page,
+      search: urlParams.search,
+      sortBy: urlParams.sortBy
+    })
+    // if (this.state.search !== '') {
     //   this.props.history.push(
-    //     `/jobs/0/${this.state.sortBy}/${this.state.search}`
+    //     `/jobs-list/1/${urlParams}`
     //   )
     // }
-    console.log('PARAMS:', this.props.match)
   }
 
   componentDidUpdate(prevProps) {
-    const locationChanged = this.props.location !== prevProps.location
-    if (locationChanged) {
-      const { page, sortBy, search } = this.props.match.params
-      const updatedState = {
-        page,
-        sortBy,
-        search: search === undefined ? '' : search
-      }
-      this.setState(updatedState)
-      this.props.loadJobs(updatedState)
+    console.log('HERE', this.props.jobs.query)
+    // const locationChanged = this.props.location !== prevProps.location
+    const paramsChanged = this.props.location.search !== prevProps.location.search
+    if (paramsChanged) {
+      const newParams = queryString.parse(this.props.location.search)
+      this.setState({
+        page: newParams.page,
+        search: newParams.search,
+        sortBy: newParams.sortBy
+      })
+      this.props.loadJobs(newParams)
     }
   }
 
   OnPageChange = (event) => {
     const { selected } = event;
-    this.props.history.push(
-      `/jobs/${selected}/${this.state.sortBy}/${this.state.search}`
-    )
+    this.props.history.location.search = queryString.stringify({
+      page: selected,
+      search: this.state.search,
+      sortBy: this.state.sortBy
+    })
+
+    this.setState({
+      page: selected,
+      search: this.state.search,
+      sortBy: this.state.sortBy
+    })
+    // this.props.history.push(
+    //   `/jobs/${selected}/${this.state.sortBy}/${this.state.search}`
+    // )
   }
 
   OnSortChange = (event) => {
@@ -59,7 +81,7 @@ class JobsListContainer extends React.PureComponent {
     event.preventDefault()
     if (this.state.search !== undefined) {
       this.props.history.push(
-        `/jobs/0/${this.state.sortBy}/${this.state.search}`
+        `/jobs?search=${this.state.search}`
       )
     }
   }
@@ -74,7 +96,6 @@ class JobsListContainer extends React.PureComponent {
         <JobsList
           jobs={this.props.jobs}
           OnPageChange={this.OnPageChange}
-          // jobTitle={this.state.search}
           sortBy={this.state.sortBy}
           currentPage={parseInt(this.state.page)}
         />
@@ -84,7 +105,9 @@ class JobsListContainer extends React.PureComponent {
 }
 
 const mapStateToProps = state => {
-  return { jobs: state.jobs }
+  return { 
+    jobs: state.jobs
+   }
 }
 
 export default connect(mapStateToProps, { loadJobs })(JobsListContainer)

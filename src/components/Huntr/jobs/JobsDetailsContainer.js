@@ -10,6 +10,8 @@ class JobsDetailsContainer extends React.Component {
   }
 
   componentDidMount() {
+    console.log('JOBS DETAILS!');
+    
     const regExp = new RegExp('/.*', 'g')
     const selectedJob = this.props.jobs
       .find(job => {

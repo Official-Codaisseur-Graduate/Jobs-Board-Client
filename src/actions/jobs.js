@@ -13,11 +13,15 @@ export const loadJobs = (query) => (dispatch) => {
   request(`${baseUrl}/jobs`)
     .query(query)
     .then(response => {
-      dispatch(jobsFetched(response.body));
+      dispatch(jobsFetched({
+        result: response.body.rows,
+        total: response.body.pages,
+        query: query
+      }))
     })
     .catch(error => {
       console.error(error);
-    });
+    })
 }
 
 

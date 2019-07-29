@@ -19,8 +19,8 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/jobs" component={JobsListContainer} />
           <Route exact path="/companies/:page/:sortBy/:search?" component={CompaniesListContainer} />
-          <Route path="/jobs/:name" component={JobsDetailsContainer} />
-          <Route path="/company/:id" component={CompanyDetailsContainer} />
+          <Route exact path="/jobs/:name" component={JobsDetailsContainer} />
+          <Route exact path="/company/:id" component={CompanyDetailsContainer} />
           <Route path="/graduates" component={GraduatesStatsListContainer} />
         </div>
       </Provider>

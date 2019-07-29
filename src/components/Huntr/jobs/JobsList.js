@@ -15,12 +15,13 @@ const JobsList = (props) => {
     )
   }
 
-  const listJobs = jobs && jobs.map(job => {
+  const listJobs = jobs && jobs.result.map(job => {
     return (
       <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
         <div>
           <li key={job.id} className="jobs-list-link">
             <p>{job.title}</p>
+            <p>{job.employer}</p>
           </li>
         </div>
       </Link>
@@ -43,7 +44,7 @@ const JobsList = (props) => {
       activeClassName={'active'}
     />
 
-    console.log('props', props)
+    console.log('propsJOBS', props)
 
   return (
     <div style={{ textAlign: 'center' }}>

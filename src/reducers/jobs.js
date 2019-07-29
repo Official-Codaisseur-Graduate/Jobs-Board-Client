@@ -1,6 +1,11 @@
 import { JOBS_FETCHED } from "../actions/jobs";
 
-export default (state = null, action = {}) => {
+const initialState = {
+  result: [],
+  total: 0
+}
+
+export default (state = initialState, action = {}) => {
   switch (action.type) {
     case JOBS_FETCHED:
       return action.jobs
