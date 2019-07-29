@@ -69,13 +69,8 @@ This project was scaffolded using the create-react-app cli.
 **[The standard create-react-app docs can be found in here](https://github.com/facebook/create-react-app)**
 
 ## Suggestions
-This is just a basic list of suggestion we've thought of if any future class 
-was to take on this project and build on it.
 
-Presentational - Since we’ve called this the Codaisseur Job Board it would be nice to 
-use their theme see links [here](https://github.com/Codaisseur/codaisseur-theme)
-and [here](https://zeroheight.com/79edbfdc5/p/52d824)
-Apparently it’s a nifty little Material UI package that would be nice to implement
+For suggestions and unfinished userstories you can have a look at the Jobs Board(https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
 
