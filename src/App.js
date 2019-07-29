@@ -18,7 +18,7 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/jobs" component={JobsListContainer} />
-          <Route exact path="/companies/:page/:sortBy/:search?" component={CompaniesListContainer} />
+          <Route exact path="/companies" component={CompaniesListContainer} />
           <Route path="/jobs/:name" component={JobsDetailsContainer} />
           <Route path="/company/:id" component={CompanyDetailsContainer} />
           <Route path="/graduates" component={GraduatesStatsListContainer} />
