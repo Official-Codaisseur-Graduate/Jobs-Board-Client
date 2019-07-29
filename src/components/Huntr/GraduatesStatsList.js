@@ -72,8 +72,9 @@ const BarChart = !companies
 
   return (
     <div className="graduate-details">
-      <h3>What Can I Expect as a Graduate Looking for a Job?</h3>
+      <h3>What Can I Expect as a Graduate?</h3>
       <div className='bar-chart'>{BarChart}</div>
+      <p>Disclaimer: The values displayed in this chart are not accurate and need to be recalculated.</p>
     </div>
   )
 
