@@ -6,10 +6,12 @@ import queryString from 'query-string'
 
 
 class CompaniesListContainer extends React.Component {
+  
+  queries = queryString.parse(this.props.location.search);
 
   state = {
-    page: this.props.companies ? this.props.companies.query.page : 0,
-    sortBy: this.props.companies ? this.props.companies.query.sortBy : "applicationCount",
+    page: this.queries.page ? this.queries.page : 0,
+    sortBy: this.queries.sortBy ? this.queries.sortBy : "applicationCount",
     search: this.props.companies ? this.props.companies.query.search : '',
     offerCount: this.props.companies ? this.props.companies.query.offerCount : 0,
     applicationCount: this.props.companies? this.props.companies.query.applicationCount : 5,
