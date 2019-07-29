@@ -72,30 +72,10 @@ This project was scaffolded using the create-react-app cli.
 This is just a basic list of suggestion we've thought of if any future class 
 was to take on this project and build on it.
 
-Job Search - Job search capability is rather limited by Indeed. We would suggest trying 
-to find a better API in order to make requests for Job postings if you were 
-to continue with the jobs board feature of the App. A suggestion to take a 
-look at would be [Glassdoor](https://www.glassdoor.nl/). They have an API for 
-which you'd need to register and they have a pretty decent search engine and the 
-other information they have on companies would really help improve 
-functionality ie, interview process, jobs posted, general reviews of 
-companies etc.
-
 Presentational - Since we’ve called this the Codaisseur Job Board it would be nice to 
 use their theme see links [here](https://github.com/Codaisseur/codaisseur-theme)
 and [here](https://zeroheight.com/79edbfdc5/p/52d824)
 Apparently it’s a nifty little Material UI package that would be nice to implement
-
-Web Hooks - Implement a Webhooks with the Huntr API. This would update the Apps 
-database every-time a graduate inputs new data. This way you would 
-populate the database only once. Implementing Web Hooks would take care 
-of keeping it up to date [link](https://docs.huntr.co/).
-
-Graphs - There’s quite a nice charting package called ChartsJS. We saw it being used by one of our fellow classmates and it looked slick! Maybe take a look?
-[link](https://www.chartjs.org/)
-
-## Fixes
-- When you click a job to view the details and then refresh, it breaks!!!!
 
 ## Contributors
 
