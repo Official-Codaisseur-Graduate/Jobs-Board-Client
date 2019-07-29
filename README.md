@@ -1,11 +1,9 @@
 # Preface
 - This repository is a continuation by members of Codaisseur class #27 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master.
 
-
 ## [ Check out the deployed app here!](https://codaisseur-jobs-board.netlify.com)
 
-
-This is the client repo for our Jobs board real world project that was made during
+This is the client repo for our Jobs Board real world project that was made during
 weeks 9-10 of Codaisseur.
 
 ## Table of contents
@@ -24,14 +22,15 @@ weeks 9-10 of Codaisseur.
 - Redux
 - Redux-Thunk
 
-
 ## Goals for this project
 The overall goal for this project was to provide a tool to Codaisseur graduates
-whereby they could gain useful information regarding job applications. The App
+whereby they could gain useful information regarding job applications. The app
 will allow graduates to gain insight into previous graduates experiences when 
 applying to companies in the Netherlands. More precisely, the app gives a basic
 overview such as, how many previous graduates have applied to a company, whether 
-they had an interview, finally whether they got hired.
+they had an interview, and whether they got hired. The app also gives an 
+overview of how many applications and interviews it takes on average to get a job 
+offer.
 
 In  order to do this we used the [Huntr API](https://docs.huntr.co/) for previous
 graduates data and we used a basic web scraper to pull job postings from 
