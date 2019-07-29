@@ -31,9 +31,12 @@ overview such as, how many previous graduates have applied to a company, whether
 they had an interview, and whether they got hired. 
 
 In  order to do this we used the [Huntr API](https://docs.huntr.co/) for previous
-graduates data and job postings. 
+graduates data and job postings.
+
 One of the main goals in the continuation of this project was to implement a [Web Hook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
+
 Another goal was to scrap the job postings from [Indeed](https://www.npmjs.com/package/indeed-scraper) from the previous group, and replace the job postings with data from the Huntr API. 
+
 For a better user experiece we implemented more filter options when searching for an overview of a company,
 and changed the display of graduates data of a company to display statistics directly on a card for an easier overview. 
 We also added a graduates page with a chart displaying how many applications and interviews it takes on average to get a job offer.
