@@ -92,6 +92,20 @@ Graphs - There’s quite a nice charting package called ChartsJS. We saw it bein
 - When you click a job to view the details and then refresh, it breaks!!!!
 
 ## Contributors
+
+Class #27
+
+Jetske van der Wouden [JetskevdWouden](https://github.com/JetskevdWouden)
+
+Tatiany Costa [TatyCris](https://github.com/TatyCris)
+
+Marlon Palpa [malanchito](https://github.com/malanchito)
+
+Alina Beglarian [alinabeglarian](https://github.com/alinabeglarian)
+
+
+Class #26
+
 Tiago Barros - [limadebarros](https://github.com/limadebarros)
 
 Cathal Hastings - [hastinc](https://github.com/hastinc)
