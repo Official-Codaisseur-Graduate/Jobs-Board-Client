@@ -14,7 +14,6 @@ weeks 9-10 of Codaisseur.
 - [Our git workflow](#Our-git-workflow)
 - [Create React App](#Create-React-App)
 - [Suggestions](#Suggestions)
-- [Fixes](#Fixes)
 - [Contributors](#Contributors)
 
 ## Technologies used
@@ -34,7 +33,7 @@ they had an interview, and whether they got hired.
 In  order to do this we used the [Huntr API](https://docs.huntr.co/) for previous
 graduates data and job postings.
 
-One of the main goals in the continuation of this project was to implement a [Web Hook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
+One of the main goals in the continuation of this project was to implement a [Webhook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
 
 Another goal was to scrap the job postings from [Indeed](https://www.npmjs.com/package/indeed-scraper) from the previous group, and replace the job postings with data from the Huntr API. 
 
@@ -69,33 +68,8 @@ This project was scaffolded using the create-react-app cli.
 **[The standard create-react-app docs can be found in here](https://github.com/facebook/create-react-app)**
 
 ## Suggestions
-This is just a basic list of suggestion we've thought of if any future class 
-was to take on this project and build on it.
 
-Job Search - Job search capability is rather limited by Indeed. We would suggest trying 
-to find a better API in order to make requests for Job postings if you were 
-to continue with the jobs board feature of the App. A suggestion to take a 
-look at would be [Glassdoor](https://www.glassdoor.nl/). They have an API for 
-which you'd need to register and they have a pretty decent search engine and the 
-other information they have on companies would really help improve 
-functionality ie, interview process, jobs posted, general reviews of 
-companies etc.
-
-Presentational - Since we’ve called this the Codaisseur Job Board it would be nice to 
-use their theme see links [here](https://github.com/Codaisseur/codaisseur-theme)
-and [here](https://zeroheight.com/79edbfdc5/p/52d824)
-Apparently it’s a nifty little Material UI package that would be nice to implement
-
-Web Hooks - Implement Web Hooks with the Huntr API. This would update the Apps 
-database every-time a graduate inputs new data. This way you would 
-populate the database only once. Implementing Web Hooks would take care 
-of keeping it up to date [link](https://docs.huntr.co/).
-
-Graphs - There’s quite a nice charting package called ChartsJS. We saw it being used by one of our fellow classmates and it looked slick! Maybe take a look?
-[link](https://www.chartjs.org/)
-
-## Fixes
-- When you click a job to view the details and then refresh, it breaks!!!!
+For suggestions and unfinished userstories you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
 
