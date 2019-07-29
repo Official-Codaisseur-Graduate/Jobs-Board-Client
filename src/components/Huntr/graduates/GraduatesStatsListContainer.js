@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadAllCompanies } from '../../actions/allCompanies'
+import { loadAllCompanies } from '../../../actions/allCompanies'
 import GraduatesStatsList from './GraduatesStatsList'
 
 export class GraduatesStatsListContainer extends Component {

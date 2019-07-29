@@ -53,23 +53,19 @@
 }
 
 /* DETAILS */
-.jobs-details-header {
+.jobs-details {
   text-align: center;
   background: #fff;
   margin: 0 auto;
-  padding: 10px;
   width: 430px;
   border-radius: 10px;
   box-shadow: 3px 3px 3px #857d7d;
+  padding: 40px;
+  list-style: none;
 }
 
 .jobs-details-list {
   text-align: left;
-}
-
-.jobs-details {
-  list-style: none;
-  padding-right: 10px;
 }
 
 .jobs-details a {

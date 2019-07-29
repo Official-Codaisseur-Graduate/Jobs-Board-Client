@@ -1,12 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { loadCompanies } from '../../actions/companies'
-import CompaniesList from '../Huntr/CompaniesList'
+import { loadCompanies } from '../../../actions/companies'
+import CompaniesList from './CompaniesList'
 import queryString from 'query-string'
 
-
 class CompaniesListContainer extends React.Component {
-  
   queries = queryString.parse(this.props.location.search);
 
   state = {
@@ -33,7 +31,7 @@ class CompaniesListContainer extends React.Component {
     else
     {
       this.props.loadCompanies(queries)
-    }  
+    }
   }
 
   componentDidUpdate(){
@@ -168,7 +166,6 @@ class CompaniesListContainer extends React.Component {
     this.props.history.push(
       `/companies?page=${page}&sortBy=${sortBy}&filterByApplications=${event.target.value}`
     )
-
   }
 
   render() {

@@ -15,19 +15,20 @@ const JobsList = (props) => {
     )
   }
 
-  const listJobs = jobs && jobs.map(job => {
+  const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
     return (
       <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
         <div>
           <li key={job.id} className="jobs-list-link">
             <p>{job.title}</p>
+            <p>{job.employer}</p>
           </li>
         </div>
       </Link>
     )
   })
 
-  const pagination = jobs.pages > 1 &&
+  const pagination = jobs.jobs.pages > 1 &&
     <ReactPaginate
       previousLabel={'previous'}
       nextLabel={'next'}
@@ -42,8 +43,6 @@ const JobsList = (props) => {
       subContainerClassName={'pages pagination'}
       activeClassName={'active'}
     />
-
-    console.log('props', props)
 
   return (
     <div style={{ textAlign: 'center' }}>

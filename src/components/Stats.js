@@ -1,5 +1,5 @@
 import React from 'react'
-import './Huntr/CompaniesList.css'
+import './Huntr/companies/CompaniesList.css'
 import {Bar,Pie} from 'react-chartjs-2'
 
 export default function Stats(props) {

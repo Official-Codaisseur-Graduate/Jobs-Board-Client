@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './CompaniesList.css'
 import ReactPaginate from 'react-paginate'
-import './Pagination.css'
+import '../Pagination.css'
 
 const CompaniesList = (props) => {
   const { companies } = props

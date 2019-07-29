@@ -1,33 +1,21 @@
 import React from 'react'
-// import { findMatchingCompany } from '../../actions/jobs'
 import { connect } from 'react-redux'
 import JobsDetails from './JobsDetails';
-import Stats from '../../Stats';
+import { loadJob } from '../../../actions/jobs'
 
 class JobsDetailsContainer extends React.Component {
-  state = { 
-    selectedJob: null 
-  }
 
   componentDidMount() {
-    const regExp = new RegExp('/.*', 'g')
-    const selectedJob = this.props.jobs
-      .find(job => {
-        return job.company.replace(regExp, '') === this.props.match.params.name
-      })
-
-    // this.props.findMatchingCompany(this.props.match.params.name)
-
-    this.setState({
-      selectedJob: selectedJob
-    })
+    this.props.loadJob(this.props.match.params.id)
   }
 
   render() {
     return (
       <div>
-        <JobsDetails selectedJob={this.state.selectedJob} />
-        <Stats company={this.props.jobsCompany}/>
+        <JobsDetails
+        job={this.props.job}
+        goBackToPreviousPage={this.goBackToPreviousPage}
+        />
       </div>
     )
   }
@@ -35,9 +23,8 @@ class JobsDetailsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return { 
-    jobs: state.jobs,
-    jobsCompany: state.jobsCompany
+    job: state.job
   }
 }
 
-export default connect(mapStateToProps)(JobsDetailsContainer) 
+export default connect(mapStateToProps, { loadJob })(JobsDetailsContainer) 
