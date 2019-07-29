@@ -15,7 +15,6 @@ const companyFetched = company => ({
 })
 
 export const loadCompanies = (query) => (dispatch) => {
-  
   request(`${baseUrl}/companies`)
     .query(query)
     .then(response => {

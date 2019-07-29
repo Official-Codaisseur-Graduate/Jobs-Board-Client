@@ -142,8 +142,6 @@ const CompaniesList = (props) => {
   const currentFilter = props.sortBy === "jobOfferAfterApplyingRate" ?
                           filterByApplications : filterByOffers
 
-      console.log('propsCOMPANIES', props)
-
   return (
     <div>
       <h2 className="companies-list-header">Companies list</h2>

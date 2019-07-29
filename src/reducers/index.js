@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
 import jobs from './jobs'
-import indeedCompany from './indeedCompany'
+import job from './job'
 import companies from './companies'
 import company from './company'
 import allCompanies from './allCompanies'
 
 export default combineReducers({
   jobs,
-  indeedCompany,
+  job,
   companies,
   company,
   allCompanies

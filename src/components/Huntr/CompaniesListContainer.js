@@ -4,12 +4,12 @@ import { loadCompanies } from '../../actions/companies'
 import CompaniesList from '../Huntr/CompaniesList'
 import queryString from 'query-string'
 
-
 class CompaniesListContainer extends React.Component {
+  queries = queryString.parse(this.props.location.search);
 
   state = {
-    page: this.props.companies ? this.props.companies.query.page : 0,
-    sortBy: this.props.companies ? this.props.companies.query.sortBy : "applicationCount",
+    page: this.queries.page ? this.queries.page : 0,
+    sortBy: this.queries.sortBy ? this.queries.sortBy : "applicationCount",
     search: this.props.companies ? this.props.companies.query.search : '',
     offerCount: this.props.companies ? this.props.companies.query.offerCount : 0,
     applicationCount: this.props.companies? this.props.companies.query.applicationCount : 5,
@@ -18,6 +18,7 @@ class CompaniesListContainer extends React.Component {
 
   componentDidMount() {
     const queries = queryString.parse(this.props.location.search);
+
     if(!queries.page){
       const newState = {
         page: this.state.page,
@@ -27,7 +28,10 @@ class CompaniesListContainer extends React.Component {
       }
       this.props.loadCompanies(newState)    
     }
-    this.props.loadCompanies(queries)
+    else
+    {
+      this.props.loadCompanies(queries)
+    }
   }
 
   componentDidUpdate(){
@@ -161,7 +165,6 @@ class CompaniesListContainer extends React.Component {
     this.props.history.push(
       `/companies?page=${page}&sortBy=${sortBy}&filterByApplications=${event.target.value}`
     )
-
   }
 
   render() {
