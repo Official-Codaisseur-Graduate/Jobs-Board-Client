@@ -28,13 +28,15 @@ whereby they could gain useful information regarding job applications. The app
 will allow graduates to gain insight into previous graduates experiences when 
 applying to companies in the Netherlands. More precisely, the app gives a basic
 overview such as, how many previous graduates have applied to a company, whether 
-they had an interview, and whether they got hired. The app also gives an 
-overview of how many applications and interviews it takes on average to get a job 
-offer.
+they had an interview, and whether they got hired. 
 
 In  order to do this we used the [Huntr API](https://docs.huntr.co/) for previous
-graduates data and we used a basic web scraper to pull job postings from 
-[Indeed](https://www.npmjs.com/package/indeed-scraper). Because the Huntr API doesn't filter out duplicate/similar company names we decided to copy all the companies from the Huntr API into our own database and write an algorithm that takes out the duplicates and merges their information.
+graduates data and job postings. 
+One of the main goals in the continuation of this project was to implement a [Web Hook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
+Another goal was to scrap the job postings from [Indeed](https://www.npmjs.com/package/indeed-scraper) from the previous group, and replace the job postings with data from the Huntr API. 
+For a better user experiece we implemented more filter options when searching for an overview of a company,
+and changed the display of graduates data of a company to display statistics directly on a card for an easier overview. 
+We also added a graduates page with an a chart displaying how many applications and interviews it takes on average to get a job offer.
 
 
 ## Setup
