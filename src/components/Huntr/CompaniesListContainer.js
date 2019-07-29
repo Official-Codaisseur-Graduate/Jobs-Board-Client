@@ -44,7 +44,8 @@ class CompaniesListContainer extends React.Component {
     const condition3 = this.state.applicationCount !== applicationCount
     const condition4 = exactOfferCount && this.state.exactOfferCount === 'No filter'
     const condition5 = this.state.page !== page
-    if(this.state.search===''){
+    
+    if(!this.state.search||this.state.search===''){
       if(condition1||condition2||condition3||condition4||condition5){
         const newState = {
           page: this.state.page,

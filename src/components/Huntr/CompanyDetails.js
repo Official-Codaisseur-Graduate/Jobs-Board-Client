@@ -23,7 +23,7 @@ export default function CompanyDetails(props) {
               more info
             </a>
           }
-          <Link onClick={props.goBackToPreviousPage}>go back</Link>
+          <Link to='/companies'>go back</Link>
         </div>
       }
       <div className="companies-details-stats">

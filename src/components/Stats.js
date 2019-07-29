@@ -50,8 +50,8 @@ export default function Stats(props) {
     }]
   }
 
-  const companyStatsBar = <Bar data={barData} width="300" height="300"/>
-  const companyHiringRatePie = <Pie data={pieData} width="300" height="300" />
+  const companyStatsBar = <Bar className="charts "data={barData} width={300} height={300}/>
+  const companyHiringRatePie = <Pie className="charts" data={pieData} width={300} height={300} />
 
   if(company.jobOfferAfterApplyingRate===0){
     return  <div className="status">
