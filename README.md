@@ -21,6 +21,7 @@ weeks 9-10 of Codaisseur.
 - React
 - Redux
 - Redux-Thunk
+- [React wrapper for Chart.js](https://github.com/jerairrest/react-chartjs-2)
 
 ## Goals for this project
 The overall goal for this project was to provide a tool to Codaisseur graduates
