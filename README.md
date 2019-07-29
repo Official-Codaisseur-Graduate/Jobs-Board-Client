@@ -34,7 +34,7 @@ they had an interview, and whether they got hired.
 In  order to do this we used the [Huntr API](https://docs.huntr.co/) for previous
 graduates data and job postings.
 
-One of the main goals in the continuation of this project was to implement a [Web Hook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
+One of the main goals in the continuation of this project was to implement a [Webhook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
 
 Another goal was to scrap the job postings from [Indeed](https://www.npmjs.com/package/indeed-scraper) from the previous group, and replace the job postings with data from the Huntr API. 
 
@@ -86,7 +86,7 @@ use their theme see links [here](https://github.com/Codaisseur/codaisseur-theme)
 and [here](https://zeroheight.com/79edbfdc5/p/52d824)
 Apparently it’s a nifty little Material UI package that would be nice to implement
 
-Web Hooks - Implement Web Hooks with the Huntr API. This would update the Apps 
+Web Hooks - Implement a Webhooks with the Huntr API. This would update the Apps 
 database every-time a graduate inputs new data. This way you would 
 populate the database only once. Implementing Web Hooks would take care 
 of keeping it up to date [link](https://docs.huntr.co/).
