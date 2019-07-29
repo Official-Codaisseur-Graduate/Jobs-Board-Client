@@ -1,7 +1,8 @@
 # Preface
 - This repository is a continuation by members of Codaisseur class #27 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master.
+- You can find the back-end repository for this project [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server)
 
-## [Check out the deployed app here!](https://codaisseur-jobs-board.netlify.com)
+## [Check out the deployed app here!](https://jobs-board-client.herokuapp.com)
 
 This is the client repo for our Jobs Board real world project that was made during
 weeks 9-10 of Codaisseur.
@@ -69,27 +70,21 @@ This project was scaffolded using the create-react-app cli.
 
 ## Suggestions
 
-For suggestions and unfinished userstories you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
+For suggestions, unfinished userstories and issues you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
 
 Class #27
 
-Jetske van der Wouden - [JetskevdWouden](https://github.com/JetskevdWouden)
-
-Tatiany Costa - [TatyCris](https://github.com/TatyCris)
-
-Marlon Palpa - [malanchito](https://github.com/malanchito)
-
-Alina Beglarian - [alinabeglarian](https://github.com/alinabeglarian)
+- Jetske van der Wouden - [JetskevdWouden](https://github.com/JetskevdWouden)
+- Tatiany Costa - [TatyCris](https://github.com/TatyCris)
+- Marlon Palpa - [malanchito](https://github.com/malanchito)
+- Alina Beglarian - [alinabeglarian](https://github.com/alinabeglarian)
 
 
 Class #26
 
-Tiago Barros - [limadebarros](https://github.com/limadebarros)
-
-Cathal Hastings - [hastinc](https://github.com/hastinc)
-
-Hager Hussein - [hagerhussein](https://github.com/hagerhussein)
-
-Dave Mollen - [davemollen](https://github.com/davemollen)
+- Tiago Barros - [limadebarros](https://github.com/limadebarros)
+- Cathal Hastings - [hastinc](https://github.com/hastinc)
+- Hager Hussein - [hagerhussein](https://github.com/hagerhussein)
+- Dave Mollen - [davemollen](https://github.com/davemollen)
