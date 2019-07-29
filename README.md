@@ -14,7 +14,6 @@ weeks 9-10 of Codaisseur.
 - [Our git workflow](#Our-git-workflow)
 - [Create React App](#Create-React-App)
 - [Suggestions](#Suggestions)
-- [Fixes](#Fixes)
 - [Contributors](#Contributors)
 
 ## Technologies used
