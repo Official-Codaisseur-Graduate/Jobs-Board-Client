@@ -20,7 +20,7 @@ export default function JobsDetails(props) {
               more info
             </a>
           }
-          <Link to={'/'}> go back</Link>
+          <Link to={'/jobs'}> go back</Link>
         </div>
       }
     </div>
