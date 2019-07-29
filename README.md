@@ -75,21 +75,21 @@ For suggestions, unfinished userstories and issues you can have a look at the [J
 
 Class #27
 
-Jetske van der Wouden - [JetskevdWouden](https://github.com/JetskevdWouden)
+- Jetske van der Wouden - [JetskevdWouden](https://github.com/JetskevdWouden)
 
-Tatiany Costa - [TatyCris](https://github.com/TatyCris)
+- Tatiany Costa - [TatyCris](https://github.com/TatyCris)
 
-Marlon Palpa - [malanchito](https://github.com/malanchito)
+- Marlon Palpa - [malanchito](https://github.com/malanchito)
 
-Alina Beglarian - [alinabeglarian](https://github.com/alinabeglarian)
+- Alina Beglarian - [alinabeglarian](https://github.com/alinabeglarian)
 
 
 Class #26
 
-Tiago Barros - [limadebarros](https://github.com/limadebarros)
+- Tiago Barros - [limadebarros](https://github.com/limadebarros)
 
-Cathal Hastings - [hastinc](https://github.com/hastinc)
+- Cathal Hastings - [hastinc](https://github.com/hastinc)
 
-Hager Hussein - [hagerhussein](https://github.com/hagerhussein)
+- Hager Hussein - [hagerhussein](https://github.com/hagerhussein)
 
-Dave Mollen - [davemollen](https://github.com/davemollen)
+- Dave Mollen - [davemollen](https://github.com/davemollen)
