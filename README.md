@@ -1,7 +1,7 @@
 # Preface
 - This repository is a continuation by members of Codaisseur class #27 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master.
 
-## [ Check out the deployed app here!](https://codaisseur-jobs-board.netlify.com)
+## [Check out the deployed app here!](https://codaisseur-jobs-board.netlify.com)
 
 This is the client repo for our Jobs Board real world project that was made during
 weeks 9-10 of Codaisseur.
