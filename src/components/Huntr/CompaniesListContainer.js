@@ -37,7 +37,6 @@ class CompaniesListContainer extends React.Component {
   }
 
   componentDidUpdate(){
-    console.log("after")
     const { page, sortBy, offerCount, applicationCount, exactOfferCount } = 
       this.props.companies.query
     const condition1 = this.state.sortBy !== sortBy
