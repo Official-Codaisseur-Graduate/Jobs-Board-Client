@@ -21,6 +21,7 @@ weeks 9-10 of Codaisseur.
 - React
 - Redux
 - Redux-Thunk
+- Webhooks
 
 ## Goals for this project
 The overall goal for this project was to provide a tool to Codaisseur graduates
@@ -95,13 +96,13 @@ Graphs - There’s quite a nice charting package called ChartsJS. We saw it bein
 
 Class #27
 
-Jetske van der Wouden [JetskevdWouden](https://github.com/JetskevdWouden)
+Jetske van der Wouden - [JetskevdWouden](https://github.com/JetskevdWouden)
 
-Tatiany Costa [TatyCris](https://github.com/TatyCris)
+Tatiany Costa - [TatyCris](https://github.com/TatyCris)
 
-Marlon Palpa [malanchito](https://github.com/malanchito)
+Marlon Palpa - [malanchito](https://github.com/malanchito)
 
-Alina Beglarian [alinabeglarian](https://github.com/alinabeglarian)
+Alina Beglarian - [alinabeglarian](https://github.com/alinabeglarian)
 
 
 Class #26
