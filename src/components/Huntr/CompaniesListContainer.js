@@ -20,6 +20,7 @@ class CompaniesListContainer extends React.Component {
 
   componentDidMount() {
     const queries = queryString.parse(this.props.location.search);
+
     if(!queries.page){
       const newState = {
         page: this.state.page,
@@ -29,10 +30,14 @@ class CompaniesListContainer extends React.Component {
       }
       this.props.loadCompanies(newState)    
     }
-    this.props.loadCompanies(queries)
+    else
+    {
+      this.props.loadCompanies(queries)
+    }
   }
 
   componentDidUpdate(){
+    console.log("after")
     const { page, sortBy, offerCount, applicationCount, exactOfferCount } = 
       this.props.companies.query
     const condition1 = this.state.sortBy !== sortBy
