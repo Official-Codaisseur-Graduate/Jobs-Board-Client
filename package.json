@@ -44,5 +44,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "- This repository is a continuation by members of Codaisseur class #27 of the \"Jobs Board\" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master. - You can find the back-end repository for this project [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Client/issues"
+  },
+  "homepage": "https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Client#readme"
 }
