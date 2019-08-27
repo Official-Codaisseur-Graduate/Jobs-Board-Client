@@ -15,6 +15,7 @@ class JobsListContainer extends React.PureComponent {
   }
 
   componentDidMount() {
+    console.log('this.props cdidMount:', this.props)
     const queries = queryString.parse(this.props.location.search)
 
     if (!queries.page) {
@@ -30,9 +31,10 @@ class JobsListContainer extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    console.log('JOBLISTCONTAINER: props.jobs', this.props.jobs)
-    console.log('JOBLISTCONTAINER state:', this.state)
-    const { page, sortBy } = this.props.jobs.query
+    console.log('JOBLISTCONTAINER DidUpdate props.jobs:', this.props.jobs)
+    console.log('JOBLISTCONTAINER DidUpdate state:', this.state)
+    // const { page, sortBy } = this.props.jobs.query
+    const { page, sortBy } = this.state
     const condition2 = this.state.page !== page
     const condition1 = this.state.sortBy !== sortBy
 
@@ -49,6 +51,7 @@ class JobsListContainer extends React.PureComponent {
   }
 
   OnPageChange = (event) => {
+    console.log('event:', event)
     const { selected } = event;
     const { sortBy } = this.props.jobs.query
     const pageAndSortByQueries = `/jobs?page=${selected}&sortBy=${sortBy}`
@@ -89,6 +92,7 @@ class JobsListContainer extends React.PureComponent {
   }
 
   render() {
+    console.log('this.props render:', this.props)
     return (
       <div style={{ textAlign: 'center' }}>
         <h3 style={{ textTransform: "uppercase", fontSize: 20 }}>
