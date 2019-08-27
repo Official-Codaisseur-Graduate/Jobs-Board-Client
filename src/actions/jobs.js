@@ -15,6 +15,7 @@ const jobFetched = job => ({
 })
 
 export const loadJobs = (query) => (dispatch) => {
+  console.log('query:', query)
   request(`${baseUrl}/jobs`)
     .query(query)
     .then(response => {

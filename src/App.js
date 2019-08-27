@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import store from './store'
-import { Provider } from 'react-redux'
+// import store from './store'
+// import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom'
 import CompaniesListContainer from './components/Huntr/companies/CompaniesListContainer'
 import JobsListContainer from './components/Huntr/jobs/JobsListContainer'
@@ -13,7 +13,7 @@ import HomePage from './components/Huntr/HomePage';
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <div>
           <NavBar />
           <Route exact path="/" component={HomePage} />
@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/jobs/:id" component={JobsDetailsContainer} />
           <Route path="/graduates" component={GraduatesStatsListContainer} />
         </div>
-      </Provider>
+      // </Provider>
     );
   }
 }

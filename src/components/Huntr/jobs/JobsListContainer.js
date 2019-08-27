@@ -30,6 +30,8 @@ class JobsListContainer extends React.PureComponent {
   }
 
   componentDidUpdate() {
+    console.log('JOBLISTCONTAINER: props.jobs', this.props.jobs)
+    console.log('JOBLISTCONTAINER state:', this.state)
     const { page, sortBy } = this.props.jobs.query
     const condition2 = this.state.page !== page
     const condition1 = this.state.sortBy !== sortBy
