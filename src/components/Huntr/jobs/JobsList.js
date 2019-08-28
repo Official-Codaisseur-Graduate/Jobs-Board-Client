@@ -28,7 +28,7 @@ const JobsList = (props) => {
     )
   })
 
-  // const pagination = jobs.jobs.pages > 1 &&
+  // 2: const pagination = jobs.jobs.pages > 1 &&
   //   <ReactPaginate
   //     previousLabel={'previous'}
   //     nextLabel={'next'}
@@ -77,7 +77,7 @@ const JobsList = (props) => {
       </div>
       <div style={{ textAlign: 'center' }}>
       </div>
-      {/* {pagination} */}
+      {/* 3: {pagination} */}
       {pagination()}
     </div>
   )

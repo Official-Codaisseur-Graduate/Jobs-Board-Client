@@ -4,7 +4,7 @@ import JobsForm from './JobsForm'
 import { searchJobs } from '../../../actions/jobs'
 
 class JobsFormContainer extends React.Component {
-  // query to role
+  // 4: query to role
   // everywhere you find role
   state = {
     role: '',
@@ -22,6 +22,7 @@ class JobsFormContainer extends React.Component {
     this.props.searchJobs(this.state)
     event.preventDefault()
     this.setState({
+      // 4: query to role
       role: '',
       city: ''
     })

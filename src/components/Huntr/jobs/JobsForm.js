@@ -14,9 +14,9 @@ export default function JobsForm(props) {
         Role: &nbsp;
         <input
           type="text"
-          // query to role
-          // everywhere you find role
+          // 4: query to role
           name="role"
+          // 4: query to role
           value={props.values.role}
           onChange={props.onChange}
         />
