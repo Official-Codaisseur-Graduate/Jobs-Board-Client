@@ -139,8 +139,9 @@ const CompaniesList = (props) => {
                                   </select>
                                   applications
                                 </label>
-  const currentFilter = props.sortBy === "jobOfferAfterApplyingRate" ?
-                          filterByApplications : filterByOffers
+  const currentFilter = props.sortBy === "jobOfferAfterApplyingRate"
+     ? filterByApplications 
+     : filterByOffers
 
   return (
     <div>

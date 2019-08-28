@@ -54,7 +54,8 @@ class JobsListContainer extends React.PureComponent {
     console.log('event:', event)
     const { selected } = event;
     const { sortBy } = this.props.jobs.query
-    const pageAndSortByQueries = `/jobs?page=${selected}&sortBy=${sortBy}`
+    // const pageAndSortByQueries = `/jobs?page=${selected}&sortBy=${sortBy}`
+    const pageAndSortByQueries = `/jobs1?page=${selected}&sortBy=${sortBy}`
 
     this.setState({
       page: selected
@@ -66,7 +67,8 @@ class JobsListContainer extends React.PureComponent {
   OnSortChange = (event) => {
     const newSortBy = event.target.value
     const { page } = this.state
-    const pageAndSortByQueries = `/jobs?page=${page}&sortBy=${newSortBy}`
+    // const pageAndSortByQueries = `/jobs?page=${page}&sortBy=${newSortBy}`
+    const pageAndSortByQueries = `/jobs1?page=${page}&sortBy=${newSortBy}`
 
     this.setState({
       sortBy: newSortBy
@@ -86,7 +88,8 @@ class JobsListContainer extends React.PureComponent {
     this.props.loadJobs(this.state)
     if(this.state.search !== '') {
       this.props.history.push(
-        `/jobs?search=${this.state.search}`
+        // `/jobs?search=${this.state.search}`
+        `/jobs1?search=${this.state.search}`
       )
     }
   }

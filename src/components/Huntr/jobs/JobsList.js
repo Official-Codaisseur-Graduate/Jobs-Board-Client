@@ -15,7 +15,35 @@ const JobsList = (props) => {
     )
   }
 
-  const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
+  console.log('Joblist PROPS.jobs:', props.jobs)
+  // const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
+  //   return (
+  //     <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
+  //       <div>
+  //         <li key={job.id} className="jobs-list-link">
+  //           <p>{job.title}</p>
+  //           <p>{job.employer}</p>
+  //         </li>
+  //       </div>
+  //     </Link>
+  //   )
+  // })
+
+  const listJobs = jobs.jobs.rows
+  ? jobs.jobs.rows.map(job => {
+    return (
+      <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
+        <div>
+          <li key={job.id} className="jobs-list-link">
+            <p>{job.title}</p>
+            <p>{job.employer}</p>
+          </li>
+        </div>
+      </Link>
+    )
+  })
+  // : jobs.jobs.jobs.map(job => {
+  : jobs.jobs.jobsInPage.map(job => {
     return (
       <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
         <div>
