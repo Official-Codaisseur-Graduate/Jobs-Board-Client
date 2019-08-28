@@ -42,12 +42,12 @@ export const loadJob = (id) => (dispatch, getState) => {
 
 export const searchJobs = (query) => (dispatch) => {
   // 5: dispatch(jobsFetched(null))
-  console.log('query:', query)
+  console.log('ACTION QUERY:', query)
   request
     .get(`${baseUrl}/jobs`)
     .query(query)
     .then(response => {
-      console.log('SerachJob response.body:', response.body)
+      console.log('ACTION SerachJob response.body:', response.body)
       dispatch(jobsFetched({
         jobs: response.body,
         query: query
