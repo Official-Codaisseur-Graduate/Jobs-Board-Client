@@ -42,8 +42,8 @@ const JobsList = (props) => {
       </Link>
     )
   })
-  // : jobs.jobs.jobs.map(job => {
-  : jobs.jobs.jobsInPage.map(job => {
+  : jobs.jobs.jobs.map(job => {
+  // : jobs.jobs.jobsInPage.map(job => {
     return (
       <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
         <div>
