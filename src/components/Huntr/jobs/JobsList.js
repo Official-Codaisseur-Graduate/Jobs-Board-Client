@@ -59,14 +59,20 @@ const JobsList = (props) => {
     activeClassName={'active'}
   />
 
-  const pagination = () => {
-    if (!jobs.jobs) {
-      return jobs.pages > 1 &&
-        reactPaginate
-    }
-    return jobs.jobs.pages > 1 &&
-      reactPaginate
-  }
+  // 3: const pagination = () => {
+  //   if (!jobs.jobs) {
+  //     return jobs.pages > 1 &&
+  //       reactPaginate
+  //   }
+  //   return jobs.jobs.pages > 1 &&
+  //     reactPaginate
+  // }
+
+  // 5: next syntax allows you to handle pagination
+  // as a variable
+  const pagination = jobs.jobs
+    ? jobs.jobs.pages > 1 && reactPaginate   
+    : jobs.pages > 1 && reactPaginate
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -77,8 +83,9 @@ const JobsList = (props) => {
       </div>
       <div style={{ textAlign: 'center' }}>
       </div>
-      {/* 3: {pagination} */}
-      {pagination()}
+      {/* 4: {pagination} */}
+      {/* 6: {pagination()} */}
+      {pagination}
     </div>
   )
 }
