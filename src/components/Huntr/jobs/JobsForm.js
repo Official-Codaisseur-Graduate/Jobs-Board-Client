@@ -2,7 +2,7 @@ import React from '../../../../node_modules/react'
 import './css/JobsList.css'
 
 export default function JobsForm(props) {
-  console.log('JOBSFORM:', props)
+  // console.log('JOBSFORM:', props)
   return (
     <form
       id='jobsQuery'

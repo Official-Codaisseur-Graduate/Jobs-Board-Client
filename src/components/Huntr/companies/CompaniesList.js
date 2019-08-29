@@ -96,6 +96,7 @@ const CompaniesList = (props) => {
       subContainerClassName={'pages pagination'}
       activeClassName={'active'}
     />
+
   const filterByOffers =  <label className="filter">
                             Show companies with at least
                             <select 
@@ -144,7 +145,9 @@ const CompaniesList = (props) => {
      : filterByOffers
 
   return (
+    
     <div>
+      {console.log('COMPANY props:', props)}
       <h2 className="companies-list-header">Companies list</h2>
       <form
         onSubmit={props.OnSubmit}

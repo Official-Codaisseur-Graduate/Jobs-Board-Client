@@ -12,15 +12,15 @@ class JobsFormContainer extends React.Component {
   }
 
   onChange = (event) => {
-    console.log('EVENT:', event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
   onSubmit = (event) => {
-    this.props.searchJobs(this.state)
     event.preventDefault()
+    this.props.searchJobs(this.state)
+    
     this.setState({
       // 7: query to role
       role: '',

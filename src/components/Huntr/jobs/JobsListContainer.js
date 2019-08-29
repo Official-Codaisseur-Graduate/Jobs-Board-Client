@@ -7,15 +7,15 @@ import JobsFormContainer from './JobsFormContainer'
 
 class JobsListContainer extends React.PureComponent {
   queries = queryString.parse(this.props.location.search)
-
+  
   state = {
     page: this.queries.page ? this.queries.page : 0,
     sortBy: this.queries.sortBy ? this.queries.sortBy : "title",
-    search: this.props.companies ? this.props.companies.query.search : ''
+    // search: this.props.jobs ? this.props.jobs.query.search : ''
   }
 
   componentDidMount() {
-    console.log('this.props cdidMount:', this.props)
+    console.log('this.props componentdidMount:', this.props)
     const queries = queryString.parse(this.props.location.search)
 
     if (!queries.page) {
@@ -31,31 +31,28 @@ class JobsListContainer extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    console.log('JOBLISTCONTAINER DidUpdate props.jobs:', this.props.jobs)
-    console.log('JOBLISTCONTAINER DidUpdate state:', this.state)
-    // 1: const { page, sortBy } = this.props.jobs.query
-    const { page, sortBy } = this.state
+    // console.log('JOBLISTCONTAINER DidUpdate props.jobs:', this.props.jobs)
+    // console.log('JOBLISTCONTAINER DidUpdate state:', this.state)
+    const { page, sortBy } = this.props.jobs.query
     const condition2 = this.state.page !== page
     const condition1 = this.state.sortBy !== sortBy
 
-    if (this.state.search === '') {
+    // if (this.state.search === '') {
+    if (!this.state.search||this.state.search === '') {
       if (condition1 || condition2) {
         const newState = {
           page: this.state.page,
           sortBy: this.state.sortBy,
         }
-
         this.props.loadJobs(newState)
       }
     }
   }
 
   OnPageChange = (event) => {
-    console.log('event:', event)
     const { selected } = event;
     const { sortBy } = this.props.jobs.query
-    // const pageAndSortByQueries = `/jobs?page=${selected}&sortBy=${sortBy}`
-    const pageAndSortByQueries = `/jobs1?page=${selected}&sortBy=${sortBy}`
+    const pageAndSortByQueries = `/jobs?page=${selected}&sortBy=${sortBy}`
 
     this.setState({
       page: selected
@@ -67,8 +64,7 @@ class JobsListContainer extends React.PureComponent {
   OnSortChange = (event) => {
     const newSortBy = event.target.value
     const { page } = this.state
-    // const pageAndSortByQueries = `/jobs?page=${page}&sortBy=${newSortBy}`
-    const pageAndSortByQueries = `/jobs1?page=${page}&sortBy=${newSortBy}`
+    const pageAndSortByQueries = `/jobs?page=${page}&sortBy=${newSortBy}`
 
     this.setState({
       sortBy: newSortBy
@@ -88,14 +84,13 @@ class JobsListContainer extends React.PureComponent {
     this.props.loadJobs(this.state)
     if(this.state.search !== '') {
       this.props.history.push(
-        // `/jobs?search=${this.state.search}`
-        `/jobs1?search=${this.state.search}`
+        `/jobs?search=${this.state.search}`
       )
     }
   }
 
   render() {
-    console.log('this.props render:', this.props)
+    // console.log('this.props render:', this.props)
     return (
       <div style={{ textAlign: 'center' }}>
         <h3 style={{ textTransform: "uppercase", fontSize: 20 }}>

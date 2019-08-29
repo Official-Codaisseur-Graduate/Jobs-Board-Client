@@ -15,8 +15,8 @@ const JobsList = (props) => {
     )
   }
 
-  console.log('Joblist PROPS.jobs:', props.jobs)
-  // const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
+  // console.log('Joblist PROPS.jobs:', props.jobs)
+  // 11: const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
   //   return (
   //     <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
   //       <div>
@@ -42,8 +42,8 @@ const JobsList = (props) => {
       </Link>
     )
   })
+  
   : jobs.jobs.jobs.map(job => {
-  // : jobs.jobs.jobsInPage.map(job => {
     return (
       <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
         <div>
@@ -71,7 +71,7 @@ const JobsList = (props) => {
   //     subContainerClassName={'pages pagination'}
   //     activeClassName={'active'}
   //   />
-  console.log('jobs:', jobs)
+  // console.log('jobs:', jobs)
   const reactPaginate = <ReactPaginate
     previousLabel={'previous'}
     nextLabel={'next'}
@@ -81,7 +81,8 @@ const JobsList = (props) => {
     pageRangeDisplayed={5}
     onPageChange={props.OnPageChange}
     forcePage={props.currentPage}
-    pageCount={jobs.pages}
+    // pageCount={jobs.jobs.pages}
+    pageCount={jobs.jobs.pages}
     containerClassName={'pagination'}
     subContainerClassName={'pages pagination'}
     activeClassName={'active'}
@@ -104,6 +105,7 @@ const JobsList = (props) => {
 
   return (
     <div style={{ textAlign: 'center' }}>
+      {console.log('JOB props:', props)}
       <div className="jobs-list-header">
         <div className="jobs-list-div">
           <ul>{listJobs}</ul>
