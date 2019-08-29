@@ -56,22 +56,6 @@ const JobsList = (props) => {
     )
   })
 
-  // 2: const pagination = jobs.jobs.pages > 1 &&
-  //   <ReactPaginate
-  //     previousLabel={'previous'}
-  //     nextLabel={'next'}
-  //     breakLabel={'...'}
-  //     breakClassName={'break-me'}
-  //     marginPagesDisplayed={2}
-  //     pageRangeDisplayed={5}
-  //     onPageChange={props.OnPageChange}
-  //     forcePage={props.currentPage}
-  //     pageCount={jobs.pages}
-  //     containerClassName={'pagination'}
-  //     subContainerClassName={'pages pagination'}
-  //     activeClassName={'active'}
-  //   />
-  // console.log('jobs:', jobs)
   const reactPaginate = <ReactPaginate
     previousLabel={'previous'}
     nextLabel={'next'}
@@ -81,24 +65,13 @@ const JobsList = (props) => {
     pageRangeDisplayed={5}
     onPageChange={props.OnPageChange}
     forcePage={props.currentPage}
-    // pageCount={jobs.jobs.pages}
+    
     pageCount={jobs.jobs.pages}
     containerClassName={'pagination'}
     subContainerClassName={'pages pagination'}
     activeClassName={'active'}
   />
 
-  // 3: const pagination = () => {
-  //   if (!jobs.jobs) {
-  //     return jobs.pages > 1 &&
-  //       reactPaginate
-  //   }
-  //   return jobs.jobs.pages > 1 &&
-  //     reactPaginate
-  // }
-
-  // 5: next syntax allows you to handle pagination
-  // as a variable
   const pagination = jobs.jobs
     ? jobs.jobs.pages > 1 && reactPaginate   
     : jobs.pages > 1 && reactPaginate
@@ -106,6 +79,36 @@ const JobsList = (props) => {
   return (
     <div style={{ textAlign: 'center' }}>
       {console.log('JOB props:', props)}
+
+      <form
+      id='jobsQuery'
+      onSubmit={props.onSubmitFilter}
+      autoComplete='off'
+      className="form-list">
+
+      <label>
+        Role: &nbsp;
+        <input
+          type="text"
+          name="role"
+          value={props.inputrole}
+          onChange={props.onChangeFilter}
+        />
+      </label>
+
+      <label>
+        City: &nbsp;
+        <input
+          type="text"
+          name="city"
+          value={props.inputcity}
+          onChange={props.onChangeFilter}
+        />
+      </label>
+
+      <input type="submit" />
+    </form>
+
       <div className="jobs-list-header">
         <div className="jobs-list-div">
           <ul>{listJobs}</ul>
@@ -113,8 +116,6 @@ const JobsList = (props) => {
       </div>
       <div style={{ textAlign: 'center' }}>
       </div>
-      {/* 4: {pagination} */}
-      {/* 6: {pagination()} */}
       {pagination}
     </div>
   )

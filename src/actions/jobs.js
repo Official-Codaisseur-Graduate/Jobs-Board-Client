@@ -15,7 +15,6 @@ const jobFetched = job => ({
 })
 
 export const loadJobs = (query) => (dispatch) => {
-  console.log('query:', query)
   request(`${baseUrl}/jobs`)
     .query(query)
     .then(response => {
@@ -41,21 +40,16 @@ export const loadJob = (id) => (dispatch, getState) => {
 }
 
 export const searchJobs = (query) => (dispatch) => {
-  // 8: dispatch(jobsFetched(null))
-  console.log('ACTION QUERY:', query)
   request
     .get(`${baseUrl}/jobs`)
     .query(query)
     .then(response => {
-      console.log('ACTION SerachJob response.body:', response.body)
       dispatch(jobsFetched({
         jobs: response.body,
         query: query
       }))
-      // 9: dispatch(jobsFetched(response.body))
-      
     })
     .catch(error => {
       console.error(error);
-    });
+    })
 }
