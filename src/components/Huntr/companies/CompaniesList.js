@@ -147,7 +147,6 @@ const CompaniesList = (props) => {
   return (
     
     <div>
-      {console.log('COMPANY props:', props)}
       <h2 className="companies-list-header">Companies list</h2>
       <form
         onSubmit={props.OnSubmit}

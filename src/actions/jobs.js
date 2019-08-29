@@ -38,18 +38,3 @@ export const loadJob = (id) => (dispatch, getState) => {
     })
     .catch(console.error)
 }
-
-export const searchJobs = (query) => (dispatch) => {
-  request
-    .get(`${baseUrl}/jobs`)
-    .query(query)
-    .then(response => {
-      dispatch(jobsFetched({
-        jobs: response.body,
-        query: query
-      }))
-    })
-    .catch(error => {
-      console.error(error);
-    })
-}

@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
 import { loadJobs } from '../../../actions/jobs'
-import { searchJobs } from '../../../actions/jobs'
 import JobsList from './JobsList'
 
 class JobsListContainer extends React.PureComponent {
@@ -94,7 +93,7 @@ class JobsListContainer extends React.PureComponent {
 
   onSubmitFilter = (event) => {
     event.preventDefault()
-    this.props.searchJobs({
+    this.props.loadJobs({
       page: 0,
       role: this.state.inputrole,
       city: this.state.inputcity,
@@ -132,8 +131,7 @@ class JobsListContainer extends React.PureComponent {
 }
 
 const mapDispatchToProps = {
-  loadJobs,
-  searchJobs
+  loadJobs
 }
 
 const mapStateToProps = state => {

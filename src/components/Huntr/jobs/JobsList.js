@@ -15,20 +15,6 @@ const JobsList = (props) => {
     )
   }
 
-  // console.log('Joblist PROPS.jobs:', props.jobs)
-  // 11: const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
-  //   return (
-  //     <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
-  //       <div>
-  //         <li key={job.id} className="jobs-list-link">
-  //           <p>{job.title}</p>
-  //           <p>{job.employer}</p>
-  //         </li>
-  //       </div>
-  //     </Link>
-  //   )
-  // })
-
   const listJobs = jobs.jobs.rows
   ? jobs.jobs.rows.map(job => {
     return (
@@ -65,7 +51,6 @@ const JobsList = (props) => {
     pageRangeDisplayed={5}
     onPageChange={props.OnPageChange}
     forcePage={props.currentPage}
-    
     pageCount={jobs.jobs.pages}
     containerClassName={'pagination'}
     subContainerClassName={'pages pagination'}
@@ -78,7 +63,6 @@ const JobsList = (props) => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      {console.log('JOB props:', props)}
 
       <form
       id='jobsQuery'
