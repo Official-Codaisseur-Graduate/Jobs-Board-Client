@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadAllCompanies } from '../../../actions/allCompanies'
 import GraduatesStatsList from './GraduatesStatsList'
+import GraduatesStatsPerMemberContainer from './GraduatesStatsPerMemberContainer';
 
 export class GraduatesStatsListContainer extends Component {
   componentDidMount() {
@@ -12,6 +13,7 @@ export class GraduatesStatsListContainer extends Component {
     return (
       <div>
         <GraduatesStatsList companies={this.props.allCompanies} />
+        <GraduatesStatsPerMemberContainer/>
       </div>
     )
   }
