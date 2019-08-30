@@ -15,7 +15,21 @@ const JobsList = (props) => {
     )
   }
 
-  const listJobs = jobs.jobs && jobs.jobs.rows.map(job => {
+  const listJobs = jobs.jobs.rows
+  ? jobs.jobs.rows.map(job => {
+    return (
+      <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
+        <div>
+          <li key={job.id} className="jobs-list-link">
+            <p>{job.title}</p>
+            <p>{job.employer}</p>
+          </li>
+        </div>
+      </Link>
+    )
+  })
+  
+  : jobs.jobs.jobs.map(job => {
     return (
       <Link key={job.id} to={`/jobs/${job.id}`} className="jobs-list">
         <div>
@@ -28,24 +42,57 @@ const JobsList = (props) => {
     )
   })
 
-  const pagination = jobs.jobs.pages > 1 &&
-    <ReactPaginate
-      previousLabel={'previous'}
-      nextLabel={'next'}
-      breakLabel={'...'}
-      breakClassName={'break-me'}
-      marginPagesDisplayed={2}
-      pageRangeDisplayed={5}
-      onPageChange={props.OnPageChange}
-      forcePage={props.currentPage}
-      pageCount={jobs.pages}
-      containerClassName={'pagination'}
-      subContainerClassName={'pages pagination'}
-      activeClassName={'active'}
-    />
+  const reactPaginate = <ReactPaginate
+    previousLabel={'previous'}
+    nextLabel={'next'}
+    breakLabel={'...'}
+    breakClassName={'break-me'}
+    marginPagesDisplayed={2}
+    pageRangeDisplayed={5}
+    onPageChange={props.OnPageChange}
+    forcePage={props.currentPage}
+    pageCount={jobs.jobs.pages}
+    containerClassName={'pagination'}
+    subContainerClassName={'pages pagination'}
+    activeClassName={'active'}
+  />
+
+  const pagination = jobs.jobs
+    ? jobs.jobs.pages > 1 && reactPaginate   
+    : jobs.pages > 1 && reactPaginate
 
   return (
     <div style={{ textAlign: 'center' }}>
+
+      <form
+      id='jobsQuery'
+      onSubmit={props.onSubmitFilter}
+      autoComplete='off'
+      className="form-list">
+
+      <label>
+        Role: &nbsp;
+        <input
+          type="text"
+          name="role"
+          value={props.inputrole}
+          onChange={props.onChangeFilter}
+        />
+      </label>
+
+      <label>
+        City: &nbsp;
+        <input
+          type="text"
+          name="city"
+          value={props.inputcity}
+          onChange={props.onChangeFilter}
+        />
+      </label>
+
+      <input type="submit" />
+    </form>
+
       <div className="jobs-list-header">
         <div className="jobs-list-div">
           <ul>{listJobs}</ul>

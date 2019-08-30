@@ -96,6 +96,7 @@ const CompaniesList = (props) => {
       subContainerClassName={'pages pagination'}
       activeClassName={'active'}
     />
+
   const filterByOffers =  <label className="filter">
                             Show companies with at least
                             <select 
@@ -139,10 +140,12 @@ const CompaniesList = (props) => {
                                   </select>
                                   applications
                                 </label>
-  const currentFilter = props.sortBy === "jobOfferAfterApplyingRate" ?
-                          filterByApplications : filterByOffers
+  const currentFilter = props.sortBy === "jobOfferAfterApplyingRate"
+     ? filterByApplications 
+     : filterByOffers
 
   return (
+    
     <div>
       <h2 className="companies-list-header">Companies list</h2>
       <form
