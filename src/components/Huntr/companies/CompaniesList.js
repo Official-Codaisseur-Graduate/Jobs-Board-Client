@@ -148,6 +148,7 @@ const CompaniesList = (props) => {
     
     <div>
       <h2 className="companies-list-header">Companies list</h2>
+      
       <form
         onSubmit={props.OnSubmit}
         autoComplete='off'
@@ -163,6 +164,7 @@ const CompaniesList = (props) => {
 
         <button>Submit</button>
       </form>
+
       <div className='option-list'>
         <label>Sort by: &nbsp;
           <select onChange={props.OnSortChange} value={props.sortBy}>
