@@ -39,9 +39,7 @@ const data = {
   ],
   datasets: [{
   label: "Averages indicating what it takes to get an offer or an interview after applying",
-  // backgroundColor: 'rgb(255, 99, 132, 0.4)',
   backgroundColor: 'rgb(48, 169, 255, 0.4)',
-  // borderColor: 'rgb(255, 99, 132)',
   borderColor: 'rgb(48, 169, 255)',
   data: [ApplicationToOffer, InterviewToOffer, ApplicationToInterview],
   }]
