@@ -83,3 +83,8 @@
   color: #512da8;
 }
 
+.submitButton {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
