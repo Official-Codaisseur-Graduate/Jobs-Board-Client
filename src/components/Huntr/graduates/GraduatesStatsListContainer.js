@@ -12,8 +12,9 @@ export class GraduatesStatsListContainer extends Component {
   render() {
     return (
       <div>
-        <GraduatesStatsList companies={this.props.allCompanies} />
         <GraduatesStatsPerMemberContainer/>
+        <GraduatesStatsList companies={this.props.allCompanies} />
+        
       </div>
     )
   }
