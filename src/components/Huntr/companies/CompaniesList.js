@@ -162,7 +162,7 @@ const CompaniesList = (props) => {
           onChange={props.OnSearchChange}>
         </input>
 
-        <button>Submit</button>
+        <button className='submitButton'>Submit</button>
       </form>
 
       <div className='option-list'>
