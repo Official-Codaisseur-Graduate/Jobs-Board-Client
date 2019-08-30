@@ -90,7 +90,7 @@ const JobsList = (props) => {
         />
       </label>
 
-      <input type="submit" />
+      <button className='submitButton'>Submit</button>
     </form>
 
       <div className="jobs-list-header">
