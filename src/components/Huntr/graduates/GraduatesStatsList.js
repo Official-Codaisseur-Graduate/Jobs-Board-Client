@@ -39,8 +39,10 @@ const data = {
   ],
   datasets: [{
   label: "Averages indicating what it takes to get an offer or an interview after applying",
-  backgroundColor: 'rgb(255, 99, 132)',
-  borderColor: 'rgb(255, 99, 132)',
+  // backgroundColor: 'rgb(255, 99, 132, 0.4)',
+  backgroundColor: 'rgb(48, 169, 255, 0.4)',
+  // borderColor: 'rgb(255, 99, 132)',
+  borderColor: 'rgb(48, 169, 255)',
   data: [ApplicationToOffer, InterviewToOffer, ApplicationToInterview],
   }]
 }
@@ -72,7 +74,6 @@ const BarChart = !companies
 
   return (
     <div className="graduate-details">
-      <h3>What Can I Expect as a Graduate?</h3>
       <div className='bar-chart'>{BarChart}</div>
       <p>Disclaimer: The values displayed in this chart are not accurate and need to be recalculated.</p>
     </div>
