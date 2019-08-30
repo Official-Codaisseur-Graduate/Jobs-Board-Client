@@ -15,7 +15,8 @@
 
 .bar-chart {
   max-width: 60%;
-  margin: auto
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .graduate-details p {

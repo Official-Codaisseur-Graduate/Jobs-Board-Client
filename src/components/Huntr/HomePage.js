@@ -18,6 +18,23 @@ export default function HomePage() {
       <h4>Contributors</h4>
       <div className='contributors-list'>
       <div>
+      <h5>Class #28</h5>
+      <ul>
+        <li>
+          Meenakshi Venkat
+        </li>
+        <li>
+          Julia Jankowska
+        </li>
+        <li>
+          Suhas K N
+        </li>
+        <li>
+          Gergő Kovács
+        </li>
+        </ul>
+        </div>
+      <div>
       <h5>Class #27</h5>
       <ul>
         <li>
