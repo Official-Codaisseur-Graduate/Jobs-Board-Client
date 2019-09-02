@@ -79,9 +79,9 @@ For suggestions, unfinished userstories and issues you can have a look at the [J
 Class #28
 
 - Meenakshi Venkat - [meena333](https://github.com/meena333)
-- Julia Jankowska - [julenia](https://github.com/meena333)
-- Suhas K N - [suhaskn](https://github.com/meena333)
-- Gergő Kovács - [gergokutu](https://github.com/meena333)
+- Julia Jankowska - [julenia](https://github.com/julenia)
+- Suhas K N - [suhaskn](https://github.com/suhaskn)
+- Gergő Kovács - [gergokutu](https://github.com/gergokutu)
 
 Class #27
 
