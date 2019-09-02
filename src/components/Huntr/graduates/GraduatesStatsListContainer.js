@@ -12,10 +12,10 @@ export class GraduatesStatsListContainer extends Component {
   render() {
     return (
       <div>
-        <GraduatesStatsPerMemberContainer/>
-//          Commenting out the old graph because it was based on inaccurate data.
-//         <GraduatesStatsList companies={this.props.allCompanies} />
-        
+        <GraduatesStatsPerMemberContainer />
+        {/* Commenting out the old graph because it was based on inaccurate data. */}
+        {/* <GraduatesStatsList companies={this.props.allCompanies} /> */}
+
       </div>
     )
   }
