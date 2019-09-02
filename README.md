@@ -42,6 +42,8 @@ For a better user experiece we implemented more filter options when searching fo
 and changed the display of graduates data of a company to display statistics directly on a card for an easier overview. 
 We also added a graduates page with a chart displaying how many applications and interviews it takes on average to get a job offer.
 
+As user experience improvement we implemented role and city filters on the job page and displayed further statistics about average numbers of applications and interviews on member basis.
+
 
 ## Setup
 In order to run this App please ensure you have the server running as well. 
@@ -73,6 +75,13 @@ This project was scaffolded using the create-react-app cli.
 For suggestions, unfinished userstories and issues you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
+
+Class #28
+
+- Meenakshi Venkat - [meena333](https://github.com/meena333)
+- Julia Jankowska - [julenia](https://github.com/meena333)
+- Suhas K N - [suhaskn](https://github.com/meena333)
+- Gergő Kovács - [gergokutu](https://github.com/meena333)
 
 Class #27
 
