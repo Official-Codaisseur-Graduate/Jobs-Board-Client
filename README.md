@@ -39,10 +39,9 @@ One of the main goals in the continuation of this project was to implement a [We
 Another goal was to scrap the job postings from [Indeed](https://www.npmjs.com/package/indeed-scraper) from the previous group, and replace the job postings with data from the Huntr API. 
 
 For a better user experiece we implemented more filter options when searching for an overview of a company,
-and changed the display of graduates data of a company to display statistics directly on a card for an easier overview. 
-We also added a graduates page with a chart displaying how many applications and interviews it takes on average to get a job offer.
+and changed the display of graduates data of a company to display statistics directly on a card for an easier overview.
 
-As user experience improvement we implemented role and city filters on the job page and displayed further statistics about average numbers of applications and interviews on member basis.
+As user experience improvement we implemented role and city filters on the job page and displayed further statistics about average numbers of applications and interviews on member basis on the graduates page.
 
 
 ## Setup
