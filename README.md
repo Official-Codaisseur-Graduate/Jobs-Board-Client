@@ -2,7 +2,7 @@
 - This repository is a continuation by members of Codaisseur class #28 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master.
 - You can find the back-end repository for this project [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server)
 
-## [Check out the deployed app here!](https://jobs-board-client.herokuapp.com)
+## [Check out the deployed app here!](https://jobs-board-client28.herokuapp.com)
 
 This is the client repo for our Jobs Board real world project that was made during
 weeks 9-10 of Codaisseur.
