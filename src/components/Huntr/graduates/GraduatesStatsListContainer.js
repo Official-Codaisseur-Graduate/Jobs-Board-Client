@@ -13,7 +13,8 @@ export class GraduatesStatsListContainer extends Component {
     return (
       <div>
         <GraduatesStatsPerMemberContainer/>
-        <GraduatesStatsList companies={this.props.allCompanies} />
+//          Commenting out the old graph because it was based on inaccurate data.
+//         <GraduatesStatsList companies={this.props.allCompanies} />
         
       </div>
     )
