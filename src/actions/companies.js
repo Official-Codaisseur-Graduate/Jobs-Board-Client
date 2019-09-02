@@ -18,12 +18,16 @@ export const loadCompanies = (query) => (dispatch) => {
   request(`${baseUrl}/companies`)
     .query(query)
     .then(response => {
-      dispatch(companiesFetched(response.body));
+      dispatch(companiesFetched({
+        companies: response.body,
+        query: query
+      }));
     })
     .catch(error => {
       console.error(error);
     });
 }
+
 export const loadCompany = (id) => (dispatch, getState) => {
   const state = getState().company
   if (state && state.id === id) return
@@ -34,5 +38,3 @@ export const loadCompany = (id) => (dispatch, getState) => {
     })
     .catch(console.error)
 }
-
-

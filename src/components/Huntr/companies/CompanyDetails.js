@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Stats from '../Stats'
+import Stats from '../../Stats'
 
 export default function CompanyDetails(props) {
   const { company } = props
@@ -23,7 +23,7 @@ export default function CompanyDetails(props) {
               more info
             </a>
           }
-          <Link onClick={props.goBackToPreviousPage}>go back</Link>
+          <Link to='/companies'>go back</Link>
         </div>
       }
       <div className="companies-details-stats">

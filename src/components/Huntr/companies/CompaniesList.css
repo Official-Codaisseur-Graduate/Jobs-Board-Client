@@ -24,6 +24,67 @@
   display: inline-block;
 }
 
+.filter {
+  font-size: 15px;
+  margin-left: 1%;
+  margin-right: 1%
+}
+
+.application-count {
+  background: rgb(54, 162, 235); 
+  fill: rgb(54, 162, 235); 
+}
+
+
+.interview-count {
+  background: rgb(255, 206, 86);
+  fill: rgb(255, 206, 86)
+}
+
+.offer-count {
+  background: rgb(255, 99, 132);
+  fill: rgb(255, 99, 132);
+}
+
+.circle-text {
+  text-anchor: middle
+}
+
+.legend-table {
+  font-size: 12px;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+
+.legend-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding:3px;
+}
+
+.company-info-table {
+  display: table;
+  border-spacing: 3px;
+}
+
+.company-info-cell {
+  display: table-cell;
+  padding:3px;
+  vertical-align: middle;
+}
+
+.company-info-icons {
+  width: 24px
+}
+
+.legend {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+}
+
 .companies-list:hover {
   transform: scale(1.1);
 }
@@ -105,4 +166,5 @@
 
 .form-list button {
   padding: 8px;
+  margin-bottom: 1rem;
 }

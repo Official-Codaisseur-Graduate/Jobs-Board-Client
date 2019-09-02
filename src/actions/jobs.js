@@ -2,45 +2,39 @@ import request from 'superagent'
 import { baseUrl } from './constants'
 
 export const JOBS_FETCHED = "JOBS_FETCHED";
+export const JOB_FETCHED = "JOB_FETCHED";
 
 const jobsFetched = jobs => ({
   type: JOBS_FETCHED,
   jobs
 })
 
-export const initializeJobs = () => (dispatch, getState) => {
-  if (getState().jobs) return
-  dispatch( searchJobs({query: 'Junior Developer', city: 'Amsterdam'}) )
-}
+const jobFetched = job => ({
+  type: JOB_FETCHED,
+  job
+})
 
-export const searchJobs = (query) => (dispatch) => {
-  dispatch(jobsFetched(null))
-
-  request
-    .get(`${baseUrl}/jobs`)
+export const loadJobs = (query) => (dispatch) => {
+  request(`${baseUrl}/jobs`)
     .query(query)
     .then(response => {
-      dispatch(jobsFetched(response.body));
+      dispatch(jobsFetched({
+        jobs: response.body,
+        query: query
+      }))
     })
     .catch(error => {
       console.error(error);
-    });
+    })
 }
 
-export const INDEED_COMPANY_FETCHED = "INDEED_COMPANY_FETCHED";
+export const loadJob = (id) => (dispatch, getState) => {
+  const state = getState().job
+  if (state && state.id === id) return
 
-const indeedCompanyFetched = company => ({
-  type: INDEED_COMPANY_FETCHED,
-  company
-})
-
-export const findMatchingCompany = (companyName) => (dispatch) => {
-  request
-    .get(`${baseUrl}/companies/indeed/${companyName}`)
+  request(`${baseUrl}/jobs/${id}`)
     .then(response => {
-      dispatch(indeedCompanyFetched(response.body))
+      dispatch(jobFetched(response.body))
     })
-    .catch(error => {
-      console.error(error)
-    })
+    .catch(console.error)
 }

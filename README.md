@@ -1,7 +1,10 @@
-## [ Check out the deployed app here!](https://codaisseur-jobs-board.netlify.com)
+# Preface
+- This repository is a continuation by members of Codaisseur class #28 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found [here](https://github.com/hastinc/Jobs-Board-Client/tree/master).
+- You can find the back-end repository for this project [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server).
 
+## [Check out the deployed app here!](https://jobs-board-client-codaisseur.herokuapp.com)
 
-This is the client repo for our Jobs board real world project that was made during
+This is the client repo for our Jobs Board real world project that was made during
 weeks 9-10 of Codaisseur.
 
 ## Table of contents
@@ -12,31 +15,38 @@ weeks 9-10 of Codaisseur.
 - [Our git workflow](#Our-git-workflow)
 - [Create React App](#Create-React-App)
 - [Suggestions](#Suggestions)
-- [Fixes](#Fixes)
 - [Contributors](#Contributors)
 
 ## Technologies used
 - React
 - Redux
 - Redux-Thunk
-
+- [React wrapper for Chart.js](https://github.com/jerairrest/react-chartjs-2)
 
 ## Goals for this project
 The overall goal for this project was to provide a tool to Codaisseur graduates
-whereby they could gain useful information regarding job applications. The App
+whereby they could gain useful information regarding job applications. The app
 will allow graduates to gain insight into previous graduates experiences when 
 applying to companies in the Netherlands. More precisely, the app gives a basic
 overview such as, how many previous graduates have applied to a company, whether 
-they had an interview, finally whether they got hired.
+they had an interview, and whether they got hired. 
 
 In  order to do this we used the [Huntr API](https://docs.huntr.co/) for previous
-graduates data and we used a basic web scraper to pull job postings from 
-[Indeed](https://www.npmjs.com/package/indeed-scraper). Because the Huntr API doesn't filter out duplicate/similar company names we decided to copy all the companies from the Huntr API into our own database and write an algorithm that takes out the duplicates and merges their information.
+graduates data and job postings.
+
+One of the main goals in the continuation of this project was to implement a [Webhook](https://docs.huntr.co/) with the Huntr API, so the database of the app would update automatically everytime a graduate inputs new data.
+
+Another goal was to scrap the job postings from [Indeed](https://www.npmjs.com/package/indeed-scraper) from the previous group, and replace the job postings with data from the Huntr API. 
+
+For a better user experiece we implemented more filter options when searching for an overview of a company,
+and changed the display of graduates data of a company to display statistics directly on a card for an easier overview.
+
+As user experience improvement we implemented role and city filters on the job page and displayed further statistics about average numbers of applications and interviews on member basis on the graduates page.
 
 
 ## Setup
 In order to run this App please ensure you have the server running as well. 
-Instructions on how to do that may be found [here](https://github.com/hastinc/Jobs-Board-Server)
+Instructions on how to do that may be found [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server)
 - git clone
 - npm install
 - npm run start
@@ -60,39 +70,29 @@ This project was scaffolded using the create-react-app cli.
 **[The standard create-react-app docs can be found in here](https://github.com/facebook/create-react-app)**
 
 ## Suggestions
-This is just a basic list of suggestion we've thought of if any future class 
-was to take on this project and build on it.
 
-Job Search - Job search capability is rather limited by Indeed. We would suggest trying 
-to find a better API in order to make requests for Job postings if you were 
-to continue with the jobs board feature of the App. A suggestion to take a 
-look at would be [Glassdoor](https://www.glassdoor.nl/). They have an API for 
-which you'd need to register and they have a pretty decent search engine and the 
-other information they have on companies would really help improve 
-functionality ie, interview process, jobs posted, general reviews of 
-companies etc.
-
-Presentational - Since we’ve called this the Codaisseur Job Board it would be nice to 
-use their theme see links [here](https://github.com/Codaisseur/codaisseur-theme)
-and [here](https://zeroheight.com/79edbfdc5/p/52d824)
-Apparently it’s a nifty little Material UI package that would be nice to implement
-
-Web Hooks - Implement Web Hooks with the Huntr API. This would update the Apps 
-database every-time a graduate inputs new data. This way you would 
-populate the database only once. Implementing Web Hooks would take care 
-of keeping it up to date [link](https://docs.huntr.co/).
-
-Graphs - There’s quite a nice charting package called ChartsJS. We saw it being used by one of our fellow classmates and it looked slick! Maybe take a look?
-[link](https://www.chartjs.org/)
-
-## Fixes
-- When you click a job to view the details and then refresh, it breaks!!!!
+For suggestions, unfinished userstories and issues you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
-Tiago Barros - [limadebarros](https://github.com/limadebarros)
 
-Cathal Hastings - [hastinc](https://github.com/hastinc)
+Class #28
 
-Hager Hussein - [hagerhussein](https://github.com/hagerhussein)
+- Meenakshi Venkat - [meena333](https://github.com/meena333)
+- Julia Jankowska - [julenia](https://github.com/julenia)
+- Suhas K N - [suhaskn](https://github.com/suhaskn)
+- Gergő Kovács - [gergokutu](https://github.com/gergokutu)
 
-Dave Mollen - [davemollen](https://github.com/davemollen)
+Class #27
+
+- Jetske van der Wouden - [JetskevdWouden](https://github.com/JetskevdWouden)
+- Tatiany Costa - [TatyCris](https://github.com/TatyCris)
+- Marlon Palpa - [malanchito](https://github.com/malanchito)
+- Alina Beglarian - [alinabeglarian](https://github.com/alinabeglarian)
+
+
+Class #26
+
+- Tiago Barros - [limadebarros](https://github.com/limadebarros)
+- Cathal Hastings - [hastinc](https://github.com/hastinc)
+- Hager Hussein - [hagerhussein](https://github.com/hagerhussein)
+- Dave Mollen - [davemollen](https://github.com/davemollen)

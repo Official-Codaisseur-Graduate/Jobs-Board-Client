@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import CompanyDetails from '../Huntr/CompanyDetails'
-import { loadCompany } from '../../actions/companies'
+import CompanyDetails from './CompanyDetails'
+import { loadCompany } from '../../../actions/companies'
 
 class CompanyDetailsContainer extends React.PureComponent {
   onClick = (e) => {
