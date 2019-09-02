@@ -1,8 +1,8 @@
 # Preface
-- This repository is a continuation by members of Codaisseur class #27 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master.
+- This repository is a continuation by members of Codaisseur class #28 of the "Jobs Board" real world project that was started by members of Codaisseur class #26. The original repo can be found here https://github.com/hastinc/Jobs-Board-Client/tree/master.
 - You can find the back-end repository for this project [here](https://github.com/Official-Codaisseur-Graduate/Jobs-Board-Server)
 
-## [Check out the deployed app here!](https://jobs-board-client.herokuapp.com)
+## [Check out the deployed app here!](https://jobs-board-client-codaisseur.herokuapp.com)
 
 This is the client repo for our Jobs Board real world project that was made during
 weeks 9-10 of Codaisseur.
@@ -42,6 +42,8 @@ For a better user experiece we implemented more filter options when searching fo
 and changed the display of graduates data of a company to display statistics directly on a card for an easier overview. 
 We also added a graduates page with a chart displaying how many applications and interviews it takes on average to get a job offer.
 
+As user experience improvement we implemented role and city filters on the job page and displayed further statistics about average numbers of applications and interviews on member basis.
+
 
 ## Setup
 In order to run this App please ensure you have the server running as well. 
@@ -73,6 +75,13 @@ This project was scaffolded using the create-react-app cli.
 For suggestions, unfinished userstories and issues you can have a look at the [Jobs Board](https://github.com/orgs/Official-Codaisseur-Graduate/projects/3) project board.
 
 ## Contributors
+
+Class #28
+
+- Meenakshi Venkat - [meena333](https://github.com/meena333)
+- Julia Jankowska - [julenia](https://github.com/julenia)
+- Suhas K N - [suhaskn](https://github.com/suhaskn)
+- Gergő Kovács - [gergokutu](https://github.com/gergokutu)
 
 Class #27
 
